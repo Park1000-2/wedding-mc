@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang='ko'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>우리 결혼합니다</title>
+    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap' rel='stylesheet'>
+    <link rel='stylesheet' href='style.css'>
+</head>
+<body>
+<section class='hero'>
+    <img src='assets/images/main.jpg' class='hero-img'>
+    <div class='overlay'></div>
+    <div class='hero-text'>
+        <h1 class='names'>박한천 & 홍길동</h1>
+        <p class='date'>2025. 05. 17 SAT 13:00</p>
+        <p class='hall'>서울 ○○웨딩홀 3층</p>
+    </div>
+</section>
+
+<section class='section card'>
+    <h2 class='section-title'>초대합니다</h2>
+    <p class='intro'>서로의 마음에 확신이 들어 한 자리에 서게 되었습니다.<br>귀한 걸음 하시어 따뜻한 축복을 나눠 주시면 감사하겠습니다.</p>
+</section>
+
+<section class='section'>
+    <h2 class='section-title'>Gallery</h2>
+    <div class='slider'><div class='slides'>
+<img src='assets/images/photo1.jpg' data-index='0'>
+<img src='assets/images/photo2.jpg' data-index='1'>
+<img src='assets/images/photo3.jpg' data-index='2'>
+<img src='assets/images/photo4.jpg' data-index='3'>
+<img src='assets/images/photo5.jpg' data-index='4'>
+<img src='assets/images/photo6.jpg' data-index='5'>
+<img src='assets/images/photo7.jpg' data-index='6'>
+<img src='assets/images/photo8.jpg' data-index='7'>
+<img src='assets/images/photo9.jpg' data-index='8'>
+<img src='assets/images/photo10.jpg' data-index='9'>
+<img src='assets/images/photo11.jpg' data-index='10'>
+<img src='assets/images/photo12.jpg' data-index='11'>
+</div></div>
+    <p class='slider-hint'>← 좌우로 넘겨보세요 →</p>
+</section>
+
+<div id='imageModal' class='modal'>
+    <span class='close'>&times;</span>
+    <img class='modal-image' id='modalImage'>
+    <div class='modal-nav prev'>&#10094;</div>
+    <div class='modal-nav next'>&#10095;</div>
+</div>
+
+<section class='section card'>
+    <h2 class='section-title'>Location</h2>
+    <p class='hall-text'>서울 ○○웨딩홀 3층</p>
+    <a class='nav-btn' href='https://map.naver.com/' target='_blank'>네이버 지도 길찾기</a>
+</section>
+
+<section class='section card'>
+    <h2 class='section-title'>Contact</h2>
+    <div class='contact-row'>
+        <div><h3>신랑</h3><p class='person-name'>박한천</p><a class='contact-btn' href='tel:01012341234'>📞 전화</a><a class='contact-btn' href='sms:01012341234'>✉️ 문자</a></div>
+        <div><h3>신부</h3><p class='person-name'>홍길동</p><a class='contact-btn' href='tel:01056785678'>📞 전화</a><a class='contact-btn' href='sms:01056785678'>✉️ 문자</a></div>
+    </div>
+    <button class='account-btn' onclick='openAccountModal()'>💌 마음 전하실 곳</button>
+</section>
+
+<div id='accountModal' class='modal account-modal'>
+    <div class='account-content'>
+        <span class='close-account' onclick='closeAccountModal()'>&times;</span>
+        <h2 class='section-title'>마음 전달</h2>
+        <div class='account-tabs'>
+            <button class='tab active' onclick="showTab('groom')">신랑 측</button>
+            <button class='tab' onclick="showTab('bride')">신부 측</button>
+        </div>
+        <div id='groom' class='tab-content active'>
+            <p class='account-name'>신랑 아버지: 박OO</p>
+            <p class='account-number'>국민은행 123456-01-123456</p>
+            <button class='copy-btn' onclick="copyText('국민은행 123456-01-123456')">계좌 복사</button>
+        </div>
+        <div id='bride' class='tab-content'>
+            <p class='account-name'>신부 아버지: 홍OO</p>
+            <p class='account-number'>우리은행 1002-123-456789</p>
+            <button class='copy-btn' onclick="copyText('우리은행 1002-123-456789')">계좌 복사</button>
+        </div>
+    </div>
+</div>
+
+<section class='section card'>
+    <h2 class='section-title'>방명록</h2>
+    <div class='guestbook-form'>
+        <input id='guestName' type='text' placeholder='이름' />
+        <textarea id='guestMessage' placeholder='메시지를 남겨주세요'></textarea>
+        <button class='guestbook-btn' onclick='addGuestbook()'>작성하기</button>
+    </div>
+    <div id='guestList' class='guestbook-list'></div>
+</section>
+
+<script src='script.js'></script>
+</body></html>
