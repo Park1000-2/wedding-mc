@@ -24,7 +24,7 @@ function shareKakao() {
         objectType: 'feed',
         content: {
             title: '박한천 ♥ 정수진 결혼합니다',
-            description: '2026년 10월 31일 토요일 오후 12시 10분\nSW 컨벤션 센터',
+            description: '일시: 2026.10.31. (토) 12:10\n장소: SW 컨벤션 센터 11F',
             imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
             link: {
                 mobileWebUrl: window.location.href,
