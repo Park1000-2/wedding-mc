@@ -1,145 +1,536 @@
 <!DOCTYPE html>
-<html lang='ko'>
+<html lang="ko">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>박한천 ♥ 정수진 결혼합니다</title>
+  <meta charset="utf-8" />
+  <title>한천♥수진 결혼합니다</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="description" content="2026년 10월 31일 오후 12시 10분" />
 
-    <!-- Open Graph 메타 태그 -->
-    <meta property='og:type' content='website'>
-    <meta property='og:title' content='박한천 ♥ 정수진 결혼합니다'>
-    <meta property='og:description' content='2026.10.31. 토요일 오후 12시 10분\nSW 컨벤션 센터 11F'>
-    <meta property='og:site_name' content='모바일 청첩장'>
-    <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
-    <link rel='stylesheet' href='style.css'>
-    <script src='https://developers.kakao.com/sdk/js/kakao.js'></script>
-    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=u5qu04h2jt"></script>
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Serif+KR:wght@300;400;500;700&family=Cormorant:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Naver Maps API -->
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=u5qu04h2jt"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-<section class='hero'>
-    <div class='hero-video-container'>
-        <img src='assets/images/front.gif' class='hero-gif' alt='Wedding Animation'>
-    </div>
-    <div class='hero-text'>
-        <div class='names-row'>
-            <span class='name-left'>박한천</span>
-            <div class='date-center'>
-                <span class='month'>10</span>
-                <span class='day'>31</span>
+<body class="antialiased">
+  <!-- 전체 카드 래퍼 -->
+  <div
+    class="flex flex-col justify-center h-full max-w-md lg:w-[400px] mx-auto md:rounded-3xl shadow-xl md:my-12 relative bg-white"
+    style="font-size: 1.05em;"
+  >
+    <!-- 1. 상단 커버 섹션 -->
+    <section
+      class="min-h-screen flex flex-col items-center py-16 px-6 relative md:rounded-t-3xl"
+      style="background-color: rgb(237, 247, 247);"
+    >
+      <!-- 둥근 상단 커버 이미지 -->
+      <div class="rounded-t-full aspect-album overflow-hidden w-full relative">
+        <img
+          alt="cover_image"
+          src="assets/images/front.gif"
+          class="object-cover w-full h-full"
+        />
+      </div>
+
+      <!-- 날짜/타이틀 -->
+      <div class="flex flex-col items-center mt-16">
+        <h1 class="text-3xl w-full text-center break-words tracking-[0.25em]">
+            2026. 10. 31. Saturday 12:10
+        </h1>
+      </div>
+    </section>
+
+    <!-- 2. 인사말 섹션 -->
+    <section class="w-full min-h-80 pt-14 bg-white break-keep">
+      <!-- 가운데 얇은 로고 느낌 SVG 대신 심플 텍스트 -->
+      <div class="w-full flex justify-center mb-6">
+        <p class="font-eng-serif tracking-[0.3em] text-sm text-teal-600">
+          INVITATION
+        </p>
+      </div>
+
+      <div class="leading-8 px-11 text-center text-[#111]">
+        <p>따사로운 봄기운이 꿈틀대는 3월</p>
+        <p>함께 맞이하는 세 번째 봄날</p>
+        <p>우리 두 사람</p>
+        <p>하나됨을 약속 하고자 합니다</p>
+        <br />
+        <p>서로의 손을 잡고</p>
+        <p>같은 곳을 향해 발맞춰 걸어갈</p>
+        <p>새로운 시작의 순간</p>
+        <p>여러분을 초대하오니</p>
+        <p>축복과 응원 주시면</p>
+        <p>더 없는 기쁨으로 간직하겠습니다.</p>
+      </div>
+
+      <div class="pt-10 text-center">
+        <span>신랑 박한천 · 신부 정수진</span>
+      </div>
+      <div class="pb-14"></div>
+    </section>
+
+    <!-- 3. WEDDING DAY + 달력 -->
+    <section class="bg-[#f8f8f8]">
+      <div class="flex flex-col items-center justify-center h-full py-20 min-h-96 px-4">
+        <!-- 타이틀 -->
+        <div class="mb-12 text-center">
+          <p class="tracking-wider text-4xl font-eng-serif text-[#111] opacity-90">
+            WEDDING DAY
+          </p>
+          <div class="flex flex-col text-center gap-y-2 mt-6 text-[#111] opacity-90">
+            <p>2026년 10월 31일 토요일 | 오후 12시 10분</p>
+            <p class="font-light text-sm opacity-50">
+              Saturday, October 31, 2026 | PM 12:10
+            </p>
+          </div>
+        </div>
+
+        <!-- 달력 -->
+        <div class="w-full px-5">
+          <div class="h-px w-full my-8 bg-black opacity-10"></div>
+
+          <div class="grid grid-cols-7 text-center gap-y-6 text-sm">
+            <!-- 요일 -->
+            <div class="text-red-400">일</div>
+            <div>월</div>
+            <div>화</div>
+            <div>수</div>
+            <div>목</div>
+            <div>금</div>
+            <div>토</div>
+
+            <!-- 10월 달력 (31일 강조) -->
+            <div></div><div></div><div></div><div></div>
+            <div class="font-extralight">1</div>
+            <div class="font-extralight">2</div>
+            <div class="font-extralight">3</div>
+            <div class="font-extralight text-red-400">4</div>
+            <div class="font-extralight">5</div>
+            <div class="font-extralight">6</div>
+            <div class="font-extralight">7</div>
+            <div class="font-extralight">8</div>
+            <div class="font-extralight">9</div>
+            <div class="font-extralight">10</div>
+            <div class="font-extralight text-red-400">11</div>
+            <div class="font-extralight">12</div>
+            <div class="font-extralight">13</div>
+            <div class="font-extralight">14</div>
+            <div class="font-extralight">15</div>
+            <div class="font-extralight">16</div>
+            <div class="font-extralight">17</div>
+            <div class="font-extralight text-red-400">18</div>
+            <div class="font-extralight">19</div>
+            <div class="font-extralight">20</div>
+            <div class="font-extralight">21</div>
+            <div class="font-extralight">22</div>
+            <div class="font-extralight">23</div>
+            <div class="font-extralight">24</div>
+            <div class="font-extralight text-red-400">25</div>
+            <div class="font-extralight">26</div>
+            <div class="font-extralight">27</div>
+            <div class="font-extralight">28</div>
+            <div class="font-extralight">29</div>
+            <div class="font-extralight">30</div>
+            <div class="font-extralight flex items-center justify-center">
+              <div class="text-white rounded-full w-8 h-8 flex justify-center items-center"
+                   style="background-color: rgb(108, 180, 180);">
+                31
+              </div>
             </div>
-            <span class='name-right'>정수진</span>
+          </div>
+
+          <div class="h-px w-full my-8 bg-black opacity-10"></div>
         </div>
-        <p class='date'>2026.10.31 SAT. 12:10 PM</p>
-        <p class='hall'>SW 컨벤션 센터 11F</p>
-    </div>
-</section>
+      </div>
+    </section>
 
-<section class='section card'>
-    <h2 class='section-title'>초대합니다</h2>
-    <p class='intro'>서로의 마음에 확신이 들어 한 자리에 서게 되었습니다.<br>귀한 걸음 하시어 따뜻한 축복을 나눠 주시면 감사하겠습니다.</p>
-</section>
+    <!-- 4. 부모 / 신랑 / 신부 소개 -->
+    <section style="color: #111; background-color: rgb(237, 247, 247);">
+      <div class="flex flex-col justify-center h-full min-h-96 py-20 px-4">
+        <div class="flex flex-col w-full px-12 gap-y-8">
+          <!-- 신랑측 -->
+          <div class="flex justify-between items-center text-lg">
+            <span class="tracking-wide">박성준 · 김나윤 의</span>
+            <span class="tracking-wide">아들 한천</span>
+          </div>
 
-<section class='section card'>
-    <div class='parents-info-new'>
-        <p class='parent-line'>박성준 · 김나윤의 아들 <span class='child-name'>한천</span></p>
-        <p class='parent-line'>정상만 · 손정자의 딸 <span class='child-name'>수진</span></p>
-    </div>
-</section>
+          <!-- 신부측 -->
+          <div class="flex justify-between items-center text-lg">
+            <span class="tracking-wide">정상만 · 손정자 의</span>
+            <span class="tracking-wide">딸 수진</span>
+          </div>
+        </div>
 
-<section class='section'>
-    <h2 class='section-title'>Gallery</h2>
-    <div class='slider'><div class='slides'>
-<img src='https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&h=600&fit=crop' data-index='0'>
-<img src='https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&h=600&fit=crop' data-index='1'>
-<img src='https://images.unsplash.com/photo-1529634597889-d490a91b5833?w=800&h=600&fit=crop' data-index='2'>
-<img src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&h=600&fit=crop' data-index='3'>
-<img src='https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?w=800&h=600&fit=crop' data-index='4'>
-<img src='https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&h=600&fit=crop' data-index='5'>
-<img src='https://images.unsplash.com/photo-1594587672743-6a9b07bbf3de?w=800&h=600&fit=crop' data-index='6'>
-<img src='https://images.unsplash.com/photo-1460978812857-470ed1c77af0?w=800&h=600&fit=crop' data-index='7'>
-<img src='https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&h=600&fit=crop' data-index='8'>
-<img src='https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=800&h=600&fit=crop' data-index='9'>
-<img src='https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?w=800&h=600&fit=crop' data-index='10'>
-<img src='https://images.unsplash.com/photo-1525258974812-0599bd75068c?w=800&h=600&fit=crop' data-index='11'>
-</div></div>
-    <p class='slider-hint'>← 좌우로 넘겨보세요 →</p>
-</section>
+        <!-- 축하 연락하기 버튼 -->
+        <div class="px-5">
+          <button
+            class="mt-12 w-full rounded-lg h-12 text-sm text-white"
+            type="button"
+            style="background-color: rgb(130, 191, 191);"
+            onclick="openContactModal()"
+          >
+            <div class="flex items-center justify-between w-full px-4">
+              <span>축하 연락하기</span>
+              <span>
+                <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.80871 11.75C2.39449 11.75 2.05871 12.0858 2.05871 12.5C2.05871 12.9142 2.39449 13.25 2.80871 13.25L19.3816 13.25L12.1773 20.4543C11.8844 20.7472 11.8844 21.2221 12.1773 21.515C12.4702 21.8079 12.945 21.8079 13.2379 21.515L21.7232 13.0297C22.0161 12.7368 22.0161 12.262 21.7232 11.9691L13.2379 3.48378C12.945 3.19089 12.4702 3.19089 12.1773 3.48378C11.8844 3.77667 11.8844 4.25155 12.1773 4.54444L19.3828 11.75L2.80871 11.75Z"
+                    fill="white"
+                  />
+                </svg>
+              </span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
 
-<div id='imageModal' class='modal'>
-    <span class='close'>&times;</span>
-    <img class='modal-image' id='modalImage'>
-    <div class='modal-nav prev'>&#10094;</div>
-    <div class='modal-nav next'>&#10095;</div>
-</div>
+    <!-- 5. GALLERY 섹션 -->
+    <section class="flex flex-col items-center justify-center h-full py-20 bg-white min-h-80">
+      <p class="tracking-wider text-4xl font-eng-serif text-[#111] opacity-90 px-10">
+        GALLERY
+      </p>
 
-<section class='section card'>
-    <h2 class='section-title'>Location</h2>
-    <p class='hall-text'>SW 컨벤션 센터 11F</p>
-    <p class='address-text'>서울 종로구 지봉로 19 (동묘역 6번 출구)</p>
-    <div class='map-container'>
-        <div id="map" style="width: 100%; height: 300px;"></div>
-    </div>
-    <div class='map-buttons'>
-        <a class='map-btn naver-btn' href='https://naver.me/GzE9CXtD' target='_blank'>
-            <i class='fas fa-map-marker-alt'></i>
-            <span>NAVER</span>
-        </a>
-        <a class='map-btn kakao-btn' href='https://place.map.kakao.com/7918739' target='_blank'>
-            <i class='fas fa-map-marked-alt'></i>
-            <span>KAKAO</span>
-        </a>
-        <a class='map-btn tmap-btn' href='https://tmap.life/729a166e' target='_blank'>
-            <i class='fas fa-map'></i>
-            <span>TMAP</span>
-        </a>
-    </div>
-</section>
+      <div class="my-6 text-center space-y-2 px-10 text-sm text-gray-500">
+        <p>소중한 순간들을 사진으로 담았습니다.</p>
+        <p>사진을 길게 눌러 저장하실 수 있습니다.</p>
+      </div>
 
-<section class='section card'>
-    <h2 class='section-title'>Contact</h2>
-    <div class='contact-row'>
-        <div><h3>신랑</h3><p class='person-name'>박한천</p><a class='contact-btn' href='tel:01079005871'>📞 전화</a><a class='contact-btn' href='sms:01079005871'>✉️ 문자</a></div>
-        <div><h3>신부</h3><p class='person-name'>정수진</p><a class='contact-btn' href='tel:01046166267'>📞 전화</a><a class='contact-btn' href='sms:01046166267'>✉️ 문자</a></div>
-    </div>
-    <button class='account-btn' onclick='openAccountModal()'>💌 마음 전하실 곳</button>
-</section>
+      <!-- 그리드 이미지 (원본과 비슷하게 3열) -->
+      <div class="mt-4 w-full">
+        <div class="grid grid-cols-3 gap-[1.5px]" id="gallery-grid">
+          <!-- 필요한 만큼 복사해서 쓰면 됨 -->
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-1"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/b31382a1-1c9d-4678-9c70-e1923f352f00/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-2"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/ce4bd366-23eb-44a3-f782-2847a2a6b100/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-3"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/4c9dcd1b-2fb8-42bf-6ece-74ffc4167a00/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-4"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/b31382a1-1c9d-4678-9c70-e1923f352f00/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-5"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/ce4bd366-23eb-44a3-f782-2847a2a6b100/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-6"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/4c9dcd1b-2fb8-42bf-6ece-74ffc4167a00/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-7"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/b31382a1-1c9d-4678-9c70-e1923f352f00/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-8"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/ce4bd366-23eb-44a3-f782-2847a2a6b100/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                alt="gallery-9"
+                src="https://imagedelivery.net/9PYUDgg_yiUa2u-j77sFBg/4c9dcd1b-2fb8-42bf-6ece-74ffc4167a00/public"
+                class="object-cover w-full h-full"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
-<section class='section card'>
-    <h2 class='section-title'>공유하기</h2>
-    <div class='share-buttons'>
-        <button class='share-btn kakao-share-btn' onclick='shareKakao()' title='카카오톡 공유'>
-            <i class='fas fa-comment'></i>
+      <!-- 더보기 버튼 -->
+      <button
+        onclick="loadMoreImages()"
+        id="load-more-btn"
+        class="mt-8 flex flex-col items-center text-gray-500 text-sm"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>더보기</span>
+      </button>
+    </section>
+
+    <!-- 6. LOCATION 섹션 -->
+    <section class="flex flex-col items-center py-20 bg-white">
+      <p class="tracking-wider text-4xl font-eng-serif text-[#111] opacity-90 mb-4">
+        LOCATION
+      </p>
+
+      <div class="text-center mb-6">
+        <p class="font-medium text-base">SW 컨벤션 센터 11F</p>
+        <div class="flex items-center justify-center gap-2 mt-2 text-sm text-gray-600">
+          <span>서울 종로구 지봉로 19 (동묘역 6번 출구)</span>
+          <button onclick="copyAddress()" class="text-gray-400">📋</button>
+        </div>
+      </div>
+
+      <!-- Naver Map -->
+      <div class="w-full px-6 mb-6">
+        <div id="map" class="w-full h-64 rounded-lg overflow-hidden" style="background-color: #f0f0f0;"></div>
+      </div>
+
+      <!-- Map buttons -->
+      <div class="flex gap-3 px-6 w-full mb-8">
+        <button
+          onclick="openNaverMap()"
+          class="flex-1 py-3 bg-white border border-gray-300 rounded-lg text-sm flex items-center justify-center gap-2"
+        >
+          <span class="text-green-600">N</span>
+          네이버
         </button>
-        <button class='share-btn sms-share-btn' onclick='shareSMS()' title='문자 공유'>
-            <i class='fas fa-sms'></i>
+        <button
+          onclick="openKakaoMap()"
+          class="flex-1 py-3 bg-white border border-gray-300 rounded-lg text-sm flex items-center justify-center gap-2"
+        >
+          <span class="text-yellow-500">K</span>
+          카카오
         </button>
-        <button class='share-btn link-share-btn' onclick='copyLink()' title='링크 복사'>
-            <i class='fas fa-link'></i>
+        <button
+          onclick="openTMap()"
+          class="flex-1 py-3 bg-white border border-gray-300 rounded-lg text-sm flex items-center justify-center gap-2"
+        >
+          <span class="text-blue-600">T</span>
+          T MAP
         </button>
-    </div>
-</section>
+      </div>
 
-<div id='accountModal' class='modal account-modal'>
-    <div class='account-content'>
-        <span class='close-account' onclick='closeAccountModal()'>&times;</span>
-        <h2 class='section-title'>마음 전달</h2>
-        <div class='account-tabs'>
-            <button class='tab active' onclick="showTab('groom')">신랑 측</button>
-            <button class='tab' onclick="showTab('bride')">신부 측</button>
+      <!-- Transportation info -->
+      <div class="w-full px-8 space-y-6 text-sm">
+        <div class="border-t pt-6">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-teal-600">🚇</span>
+            <span class="font-medium">지하철</span>
+          </div>
+          <div class="pl-8 space-y-1 text-gray-600">
+            <p>1호선 동묘역 6번 출구</p>
+          </div>
         </div>
-        <div id='groom' class='tab-content active'>
-            <p class='account-name'>신랑 아버지: 박성준</p>
-            <p class='account-number'>국민은행 123456-01-123456</p>
-            <button class='copy-btn' onclick="copyText('국민은행 123456-01-123456')">계좌 복사</button>
-        </div>
-        <div id='bride' class='tab-content'>
-            <p class='account-name'>신부 아버지: 정상만</p>
-            <p class='account-number'>우리은행 1002-123-456789</p>
-            <button class='copy-btn' onclick="copyText('우리은행 1002-123-456789')">계좌 복사</button>
-        </div>
-    </div>
-</div>
 
-<script src='script.js'></script>
-</body></html>
+        <div class="border-t pt-6">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-teal-600">🅿️</span>
+            <span class="font-medium">주차</span>
+          </div>
+          <div class="pl-8 space-y-1 text-gray-600">
+            <p>건물 내 주차 가능</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. D+ Counter & Share Buttons (맨 아래로 이동) -->
+    <section
+      class="flex flex-col items-center justify-center py-16 px-6 relative"
+      style="background-color: #9ab8b8;"
+    >
+      <!-- Floral wreath with D+ counter -->
+      <div class="flex flex-col items-center mb-8">
+        <svg class="floral-wreath" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="70" stroke="white" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <!-- Simplified floral elements -->
+          <g stroke="white" stroke-width="1" fill="none">
+            <path d="M100 25 L105 30 L100 35 L95 30 Z"/>
+            <path d="M175 100 L170 105 L165 100 L170 95 Z"/>
+            <path d="M100 175 L105 170 L100 165 L95 170 Z"/>
+            <path d="M25 100 L30 105 L35 100 L30 95 Z"/>
+          </g>
+        </svg>
+        <div class="text-white text-center mt-4">
+          <p id="dplus-label" class="text-xl font-light tracking-wide">D + 266</p>
+        </div>
+      </div>
+
+      <!-- 메시지 -->
+      <div class="text-white text-center space-y-2 mb-8">
+        <p class="text-base">따뜻한 마음에 깊이 감사드립니다.</p>
+      </div>
+
+      <!-- 공유 버튼들 -->
+      <div class="flex flex-col gap-3 w-full max-w-xs px-6">
+        <button
+          onclick="shareKakao()"
+          class="w-full rounded-lg py-3 text-sm font-medium"
+          style="background-color: #FEE500; color: #000;"
+        >
+          카카오톡으로 청첩장 전하기
+          <span class="float-right">→</span>
+        </button>
+        <button
+          onclick="copyLink()"
+          class="w-full rounded-lg py-3 text-sm font-medium text-white"
+          style="background-color: rgba(255,255,255,0.3);"
+        >
+          청첩장 주소 복사하기
+          <span class="float-right">📋</span>
+        </button>
+      </div>
+
+      <!-- TO OUR GUEST 로고 -->
+      <div class="mt-12 text-center">
+        <div class="text-white text-sm mb-2 font-eng-serif opacity-70" style="letter-spacing: 0.1em;">cf</div>
+        <div class="text-white text-xs font-light opacity-70" style="letter-spacing: 0.2em;">© TO OUR GUEST</div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contact-modal" class="modal">
+    <div class="bg-white rounded-2xl max-w-md w-full mx-4 p-6">
+      <!-- Header -->
+      <div class="flex justify-between items-center mb-6">
+        <div>
+          <h3 class="text-lg font-medium">축하 연락하기</h3>
+          <p class="text-sm text-gray-500 mt-1">직접 축하의 마음을 전해보세요</p>
+        </div>
+        <button onclick="closeContactModal()" class="text-gray-400 text-2xl">&times;</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex border-b mb-6">
+        <button
+          id="tab-groom"
+          class="tab-button active text-sm"
+          onclick="switchTab('groom')"
+        >
+          신랑에게
+        </button>
+        <button
+          id="tab-bride"
+          class="tab-button text-sm text-gray-400"
+          onclick="switchTab('bride')"
+        >
+          신부에게
+        </button>
+      </div>
+
+      <!-- Groom contacts -->
+      <div id="groom-contacts" class="space-y-4">
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-sm">박한천 <span class="text-gray-400 ml-8">신랑</span></span>
+            <div class="flex gap-2">
+              <button onclick="sendSMS('01079005871')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="makeCall('01079005871')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-sm">박성준 <span class="text-gray-400 ml-8">신랑 아버지</span></span>
+            <div class="flex gap-2">
+              <button onclick="sendSMS('01043796186')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="makeCall('01043796186')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-sm">김나윤 <span class="text-gray-400 ml-8">신랑 어머니</span></span>
+            <div class="flex gap-2">
+              <button onclick="sendSMS('01020806186')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="makeCall('01020806186')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bride contacts -->
+      <div id="bride-contacts" class="space-y-4" style="display: none;">
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-sm">정수진 <span class="text-gray-400 ml-8">신부</span></span>
+            <div class="flex gap-2">
+              <button onclick="sendSMS('01046166267')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="makeCall('01046166267')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-sm">정상만 <span class="text-gray-400 ml-8">신부 아버지</span></span>
+            <div class="flex gap-2">
+              <button onclick="sendSMS('01012345678')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="makeCall('01012345678')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          <div class="flex justify-between items-center">
+            <span class="text-sm">손정자 <span class="text-gray-400 ml-8">신부 어머니</span></span>
+            <div class="flex gap-2">
+              <button onclick="sendSMS('01012345678')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="makeCall('01012345678')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
