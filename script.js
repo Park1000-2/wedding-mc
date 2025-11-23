@@ -32,18 +32,48 @@ setInterval(updateDplus, 1000 * 60 * 60); // Update every hour
 // Initialize Naver Map
 window.addEventListener('load', function() {
   if (typeof naver !== 'undefined' && naver.maps) {
-    var mapOptions = {
-      center: new naver.maps.LatLng(37.571728, 127.014986), // SW 컨벤션 센터 좌표
-      zoom: 17,
-      mapTypeControl: false
-    };
-    var map = new naver.maps.Map('map', mapOptions);
+    const mapDiv = document.getElementById('map');
+    if (!mapDiv) return;
 
-    // 마커 추가
-    var marker = new naver.maps.Marker({
-      position: new naver.maps.LatLng(37.571728, 127.014986),
+    // SW 컨벤션 센터 좌표
+    const location = new naver.maps.LatLng(37.571711, 127.015185);
+
+    // 지도 생성
+    const map = new naver.maps.Map(mapDiv, {
+      center: location,
+      zoom: 17,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: naver.maps.Position.TOP_RIGHT
+      }
+    });
+
+    // 마커 생성
+    const marker = new naver.maps.Marker({
+      position: location,
       map: map,
       title: 'SW 컨벤션 센터'
+    });
+
+    // 정보 창 생성
+    const infoWindow = new naver.maps.InfoWindow({
+      content: '<div style="padding:12px 15px;text-align:center;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><strong style="font-size:14px;color:#8b7355;">SW 컨벤션 센터 11F</strong><br><span style="font-size:12px;color:#666;">서울 종로구 지봉로 19</span></div>',
+      borderWidth: 0,
+      backgroundColor: 'transparent',
+      anchorSize: new naver.maps.Size(10, 10),
+      pixelOffset: new naver.maps.Point(0, -10)
+    });
+
+    // 지도 로드시 정보 창 자동으로 열기
+    infoWindow.open(map, marker);
+
+    // 마커 클릭시 정보 창 토글
+    naver.maps.Event.addListener(marker, 'click', function() {
+      if (infoWindow.getMap()) {
+        infoWindow.close();
+      } else {
+        infoWindow.open(map, marker);
+      }
     });
   }
 });
