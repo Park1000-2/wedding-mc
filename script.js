@@ -1,7 +1,6 @@
 // 페이지 로드 시 초기화
 document.addEventListener('DOMContentLoaded', function() {
     initGallery();
-    loadGuestbook();
     initKakao();
     initNaverMap();
 });
@@ -285,83 +284,6 @@ function fallbackCopy(text) {
     }
 
     document.body.removeChild(textarea);
-}
-
-// 방명록 작성
-function addGuestbook() {
-    const nameInput = document.getElementById('guestName');
-    const messageInput = document.getElementById('guestMessage');
-
-    const name = nameInput.value.trim();
-    const message = messageInput.value.trim();
-
-    if (!name) {
-        alert('이름을 입력해주세요.');
-        return;
-    }
-
-    if (!message) {
-        alert('메시지를 입력해주세요.');
-        return;
-    }
-
-    // 방명록 객체 생성
-    const guestbook = {
-        name: name,
-        message: message,
-        date: new Date().toISOString()
-    };
-
-    // localStorage에서 기존 방명록 가져오기
-    let guestbooks = JSON.parse(localStorage.getItem('guestbooks') || '[]');
-
-    // 새 방명록 추가
-    guestbooks.unshift(guestbook);
-
-    // localStorage에 저장
-    localStorage.setItem('guestbooks', JSON.stringify(guestbooks));
-
-    // 입력 필드 초기화
-    nameInput.value = '';
-    messageInput.value = '';
-
-    // 방명록 목록 다시 로드
-    loadGuestbook();
-
-    alert('방명록이 작성되었습니다!');
-}
-
-// 방명록 로드
-function loadGuestbook() {
-    const guestList = document.getElementById('guestList');
-    const guestbooks = JSON.parse(localStorage.getItem('guestbooks') || '[]');
-
-    if (guestbooks.length === 0) {
-        guestList.innerHTML = '<p style="text-align: center; color: #999; padding: 20px;">아직 작성된 방명록이 없습니다.</p>';
-        return;
-    }
-
-    guestList.innerHTML = guestbooks.map(guest => {
-        const date = new Date(guest.date);
-        const formattedDate = `${date.getFullYear()}.${String(date.getMonth() + 1).padStart(2, '0')}.${String(date.getDate()).padStart(2, '0')} ${String(date.getHours()).padStart(2, '0')}:${String(date.getMinutes()).padStart(2, '0')}`;
-
-        return `
-            <div class="guestbook-item">
-                <div class="guest-header">
-                    <span class="guest-name">${escapeHtml(guest.name)}</span>
-                    <span class="guest-date">${formattedDate}</span>
-                </div>
-                <div class="guest-message">${escapeHtml(guest.message).replace(/\n/g, '<br>')}</div>
-            </div>
-        `;
-    }).join('');
-}
-
-// HTML 이스케이프 (XSS 방지)
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
 }
 
 // 계좌 모달 배경 클릭시 닫기
