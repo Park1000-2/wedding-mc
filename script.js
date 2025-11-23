@@ -33,7 +33,7 @@ setInterval(updateDplus, 1000 * 60 * 60); // Update every hour
 window.addEventListener('load', function() {
   if (typeof naver !== 'undefined' && naver.maps) {
     var mapOptions = {
-      center: new naver.maps.LatLng(37.5743, 127.0168), // SW 컨벤션 센터 좌표
+      center: new naver.maps.LatLng(37.571728, 127.014986), // SW 컨벤션 센터 좌표
       zoom: 17,
       mapTypeControl: false
     };
@@ -41,7 +41,7 @@ window.addEventListener('load', function() {
 
     // 마커 추가
     var marker = new naver.maps.Marker({
-      position: new naver.maps.LatLng(37.5743, 127.0168),
+      position: new naver.maps.LatLng(37.571728, 127.014986),
       map: map,
       title: 'SW 컨벤션 센터'
     });
