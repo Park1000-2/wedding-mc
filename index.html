@@ -14,6 +14,7 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
     <link rel='stylesheet' href='style.css'>
     <script src='https://developers.kakao.com/sdk/js/kakao.js'></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=u5qu04h2jt"></script>
 </head>
 <body>
 <section class='hero'>
@@ -85,6 +86,10 @@
 <section class='section card'>
     <h2 class='section-title'>Location</h2>
     <p class='hall-text'>SW 컨벤션 센터 11F</p>
+    <p class='address-text'>서울 종로구 지봉로 19 (동묘역 6번 출구)</p>
+    <div class='map-container'>
+        <div id="map" style="width: 70%; height: 300px; margin:auto"></div>
+    </div>
     <div class='map-buttons'>
         <a class='map-btn naver-btn' href='https://naver.me/GzE9CXtD' target='_blank'>
             <i class='fas fa-map-marker-alt'></i>
@@ -93,6 +98,10 @@
         <a class='map-btn kakao-btn' href='https://place.map.kakao.com/7918739' target='_blank'>
             <i class='fas fa-map-marked-alt'></i>
             <span>KAKAO</span>
+        </a>
+        <a class='map-btn tmap-btn' href='https://tmap.life/729a166e' target='_blank'>
+            <i class='fas fa-map'></i>
+            <span>TMAP</span>
         </a>
     </div>
 </section>

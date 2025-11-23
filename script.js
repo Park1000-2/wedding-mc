@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initGallery();
     loadGuestbook();
     initKakao();
+    initNaverMap();
 });
 
 // 카카오 SDK 초기화
@@ -11,6 +12,54 @@ function initKakao() {
         Kakao.init('418c67ca88ec3650ffb478f54a30c3d6');
         console.log('Kakao SDK initialized');
     }
+}
+
+// 네이버 지도 초기화
+function initNaverMap() {
+    if (typeof naver === 'undefined' || typeof naver.maps === 'undefined') {
+        console.log('Naver Maps API not loaded');
+        return;
+    }
+
+    const mapDiv = document.getElementById('map');
+    if (!mapDiv) {
+        console.log('Map div not found');
+        return;
+    }
+
+    // SW 컨벤션 센터 좌표
+    const location = new naver.maps.LatLng(37.571728, 127.014986);
+
+    // 지도 생성
+    const map = new naver.maps.Map(mapDiv, {
+        center: location,
+        zoom: 17,
+        zoomControl: true,
+        zoomControlOptions: {
+            position: naver.maps.Position.TOP_RIGHT
+        }
+    });
+
+    // 마커 생성
+    const marker = new naver.maps.Marker({
+        position: location,
+        map: map,
+        title: 'SW 컨벤션 센터'
+    });
+
+    // 정보 창 생성
+    const infoWindow = new naver.maps.InfoWindow({
+        content: '<div style="padding:10px;text-align:center;"><strong>SW 컨벤션 센터 11F</strong><br>서울 종로구 지봉로 19</div>'
+    });
+
+    // 마커 클릭시 정보 창 표시
+    naver.maps.Event.addListener(marker, 'click', function() {
+        if (infoWindow.getMap()) {
+            infoWindow.close();
+        } else {
+            infoWindow.open(map, marker);
+        }
+    });
 }
 
 // 카카오톡 공유하기
