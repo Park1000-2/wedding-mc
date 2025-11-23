@@ -29,10 +29,17 @@
     class="flex flex-col justify-center h-full max-w-md lg:w-[400px] mx-auto md:rounded-3xl shadow-xl md:my-12 relative bg-white"
     style="font-size: 1.05em;"
   >
+    <!-- Theme Switcher -->
+    <div class="flex gap-2 justify-center pt-4 px-6">
+      <button onclick="switchTheme('teal')" class="theme-btn px-4 py-2 rounded-lg text-sm font-medium transition-all" style="background-color: #c5e2e2; color: #111;">1</button>
+      <button onclick="switchTheme('red')" class="theme-btn px-4 py-2 rounded-lg text-sm font-medium transition-all" style="background-color: #f5e5e5; color: #111;">2</button>
+      <button onclick="switchTheme('green')" class="theme-btn px-4 py-2 rounded-lg text-sm font-medium transition-all" style="background-color: #e8f0e8; color: #111;">3</button>
+    </div>
+
     <!-- 1. 상단 커버 섹션 -->
     <section
       class="min-h-screen flex flex-col items-center py-16 px-6 relative md:rounded-t-3xl"
-      style="background-color: rgb(237, 247, 247);"
+      style="background-color: var(--bg-light);"
     >
       <!-- 둥근 상단 커버 이미지 -->
       <div class="rounded-t-full aspect-album overflow-hidden w-full relative">
@@ -45,8 +52,11 @@
 
       <!-- 날짜/타이틀 -->
       <div class="flex flex-col items-center mt-16">
-        <h1 class="text-3xl w-full text-center break-words tracking-[0.25em]">
+        <h1 class="text-center w-full text-center break-words tracking-[0.25em]">
             2026. 10. 31. Saturday 12:10
+        </h1>
+        <h1 class="text-center w-full text-center break-words tracking-[0.25em]">
+            SW 컨벤션센터 11F
         </h1>
       </div>
     </section>
@@ -144,7 +154,7 @@
             <div class="font-extralight">30</div>
             <div class="font-extralight flex items-center justify-center">
               <div class="text-white rounded-full w-8 h-8 flex justify-center items-center"
-                   style="background-color: rgb(108, 180, 180);">
+                   style="background-color: var(--accent-primary);">
                 31
               </div>
             </div>
@@ -156,7 +166,7 @@
     </section>
 
     <!-- 4. 부모 / 신랑 / 신부 소개 -->
-    <section style="color: #111; background-color: rgb(237, 247, 247);">
+    <section style="color: #111; background-color: var(--bg-light);">
       <div class="flex flex-col justify-center h-full min-h-96 py-20 px-4">
         <div class="flex flex-col w-full px-12 gap-y-8">
           <!-- 신랑측 -->
@@ -177,7 +187,7 @@
           <button
             class="mt-12 w-full rounded-lg h-12 text-sm text-white"
             type="button"
-            style="background-color: rgb(130, 191, 191);"
+            style="background-color: var(--accent-secondary);"
             onclick="openContactModal()"
           >
             <div class="flex items-center justify-between w-full px-4">
@@ -380,7 +390,7 @@
     <!-- 7. D+ Counter & Share Buttons (맨 아래로 이동) -->
     <section
       class="flex flex-col items-center justify-center py-16 px-6 relative"
-      style="background-color: #9ab8b8;"
+      style="background-color: var(--bg-secondary);"
     >
       <!-- Floral wreath with D+ counter -->
       <div class="flex flex-col items-center mb-8">
@@ -424,11 +434,6 @@
         </button>
       </div>
 
-      <!-- TO OUR GUEST 로고 -->
-      <div class="mt-12 text-center">
-        <div class="text-white text-sm mb-2 font-eng-serif opacity-70" style="letter-spacing: 0.1em;">cf</div>
-        <div class="text-white text-xs font-light opacity-70" style="letter-spacing: 0.2em;">© TO OUR GUEST</div>
-      </div>
     </section>
   </div>
 
@@ -468,7 +473,7 @@
           <div class="flex justify-between items-center">
             <span class="text-sm">박한천 <span class="text-gray-400 ml-8">신랑</span></span>
             <div class="flex gap-2">
-              <button onclick="sendSMS('01079005871')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="sendSMS('01079005871')" class="btn-accent px-4 py-2 text-white text-xs rounded-lg">문자 보내기</button>
               <button onclick="makeCall('01079005871')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
             </div>
           </div>
@@ -478,7 +483,7 @@
           <div class="flex justify-between items-center">
             <span class="text-sm">박성준 <span class="text-gray-400 ml-8">신랑 아버지</span></span>
             <div class="flex gap-2">
-              <button onclick="sendSMS('01043796186')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="sendSMS('01043796186')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
               <button onclick="makeCall('01043796186')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
             </div>
           </div>
@@ -488,7 +493,7 @@
           <div class="flex justify-between items-center">
             <span class="text-sm">김나윤 <span class="text-gray-400 ml-8">신랑 어머니</span></span>
             <div class="flex gap-2">
-              <button onclick="sendSMS('01020806186')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="sendSMS('01020806186')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
               <button onclick="makeCall('01020806186')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
             </div>
           </div>
@@ -501,7 +506,7 @@
           <div class="flex justify-between items-center">
             <span class="text-sm">정수진 <span class="text-gray-400 ml-8">신부</span></span>
             <div class="flex gap-2">
-              <button onclick="sendSMS('01046166267')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="sendSMS('01046166267')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
               <button onclick="makeCall('01046166267')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
             </div>
           </div>
@@ -511,7 +516,7 @@
           <div class="flex justify-between items-center">
             <span class="text-sm">정상만 <span class="text-gray-400 ml-8">신부 아버지</span></span>
             <div class="flex gap-2">
-              <button onclick="sendSMS('01012345678')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="sendSMS('01012345678')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
               <button onclick="makeCall('01012345678')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
             </div>
           </div>
@@ -521,7 +526,7 @@
           <div class="flex justify-between items-center">
             <span class="text-sm">손정자 <span class="text-gray-400 ml-8">신부 어머니</span></span>
             <div class="flex gap-2">
-              <button onclick="sendSMS('01012345678')" class="px-4 py-2 bg-teal-500 text-white text-xs rounded-lg">문자 보내기</button>
+              <button onclick="sendSMS('01012345678')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
               <button onclick="makeCall('01012345678')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
             </div>
           </div>

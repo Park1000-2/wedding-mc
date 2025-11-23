@@ -1,3 +1,21 @@
+// Theme Switcher
+function switchTheme(theme) {
+  if (theme === 'teal') {
+    document.documentElement.removeAttribute('data-theme');
+  } else {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+  localStorage.setItem('wedding-theme', theme);
+}
+
+// Load saved theme on page load
+window.addEventListener('DOMContentLoaded', function() {
+  const savedTheme = localStorage.getItem('wedding-theme');
+  if (savedTheme && savedTheme !== 'teal') {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }
+});
+
 // 결혼식 날짜 (KST 기준)
 const weddingDate = new Date("2026-10-31T12:10:00+09:00");
 
