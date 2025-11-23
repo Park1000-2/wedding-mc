@@ -13,6 +13,7 @@
     <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
     <link rel='stylesheet' href='style.css'>
+    <script src='https://developers.kakao.com/sdk/js/kakao.js'></script>
 </head>
 <body>
 <section class='hero'>
@@ -86,6 +87,14 @@
         <div><h3>신부</h3><p class='person-name'>정수진</p><a class='contact-btn' href='tel:01056785678'>📞 전화</a><a class='contact-btn' href='sms:01056785678'>✉️ 문자</a></div>
     </div>
     <button class='account-btn' onclick='openAccountModal()'>💌 마음 전하실 곳</button>
+</section>
+
+<section class='section card'>
+    <h2 class='section-title'>공유하기</h2>
+    <button class='kakao-share-btn' onclick='shareKakao()'>
+        <i class='fas fa-comment'></i>
+        <span>카카오톡 공유하기</span>
+    </button>
 </section>
 
 <div id='accountModal' class='modal account-modal'>

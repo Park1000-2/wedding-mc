@@ -460,6 +460,37 @@ body {
     background: #6d5a43;
 }
 
+/* 카카오톡 공유 버튼 */
+.kakao-share-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 15px;
+    background: #FEE500;
+    color: #3C1E1E;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.kakao-share-btn i {
+    font-size: 1.3rem;
+}
+
+.kakao-share-btn:hover {
+    background: #fdd800;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(254, 229, 0, 0.3);
+}
+
 /* 방명록 */
 .guestbook-form {
     margin-bottom: 30px;

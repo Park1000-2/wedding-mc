@@ -2,7 +2,46 @@
 document.addEventListener('DOMContentLoaded', function() {
     initGallery();
     loadGuestbook();
+    initKakao();
 });
+
+// 카카오 SDK 초기화
+function initKakao() {
+    if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
+        Kakao.init('418c67ca88ec3650ffb478f54a30c3d6');
+        console.log('Kakao SDK initialized');
+    }
+}
+
+// 카카오톡 공유하기
+function shareKakao() {
+    if (typeof Kakao === 'undefined') {
+        alert('카카오톡 공유 기능을 불러오는 중입니다. 잠시 후 다시 시도해주세요.');
+        return;
+    }
+
+    Kakao.Share.sendDefault({
+        objectType: 'feed',
+        content: {
+            title: '박한천 ♥ 정수진 결혼합니다',
+            description: '2026년 10월 31일 토요일 오후 12시 10분\nSW 컨벤션 센터',
+            imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
+            link: {
+                mobileWebUrl: window.location.href,
+                webUrl: window.location.href
+            }
+        },
+        buttons: [
+            {
+                title: '청첩장 보기',
+                link: {
+                    mobileWebUrl: window.location.href,
+                    webUrl: window.location.href
+                }
+            }
+        ]
+    });
+}
 
 // 갤러리 기능
 function initGallery() {
