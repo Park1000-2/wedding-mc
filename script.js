@@ -1,3 +1,8 @@
+// Kakao SDK 초기화
+if (typeof Kakao !== 'undefined' && !Kakao.isInitialized()) {
+  Kakao.init('418c67ca88ec3650ffb478f54a30c3d6');
+}
+
 // Theme Switcher
 function switchTheme(theme) {
   if (theme === 'teal') {
@@ -80,12 +85,74 @@ window.addEventListener('load', function() {
 
 // Share functions
 function shareKakao() {
-  alert('카카오톡 공유 기능 (Kakao SDK 연동 필요)');
+  if (typeof Kakao === 'undefined') {
+    alert('카카오톡 공유 기능을 불러오는 중입니다. 잠시 후 다시 시도해주세요.');
+    return;
+  }
+
+  Kakao.Share.sendDefault({
+    objectType: 'feed',
+    content: {
+      title: '박한천 ♥ 정수진 결혼합니다',
+      description: '일시: 2026.10.31 (토) 12:10 PM\n장소: SW 컨벤션 센터 11F',
+      imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
+      link: {
+        mobileWebUrl: window.location.href,
+        webUrl: window.location.href
+      }
+    },
+    buttons: [
+      {
+        title: '청첩장 보기',
+        link: {
+          mobileWebUrl: window.location.href,
+          webUrl: window.location.href
+        }
+      }
+    ]
+  });
+}
+
+function shareSMS() {
+  const message = `박한천 ♥ 정수진 결혼합니다
+
+일시: 2026년 10월 31일 (토) 오후 12시 10분
+장소: SW 컨벤션 센터 11F
+
+모바일 청첩장: ${window.location.href}`;
+
+  const smsUrl = `sms:?body=${encodeURIComponent(message)}`;
+  window.location.href = smsUrl;
 }
 
 function copyLink() {
-  navigator.clipboard.writeText(window.location.href);
-  alert('청첩장 주소가 복사되었습니다.');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      alert('링크가 복사되었습니다!');
+    }).catch(err => {
+      fallbackCopyLink(window.location.href);
+    });
+  } else {
+    fallbackCopyLink(window.location.href);
+  }
+}
+
+function fallbackCopyLink(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+
+  try {
+    document.execCommand('copy');
+    alert('링크가 복사되었습니다!');
+  } catch (err) {
+    alert('복사에 실패했습니다. 수동으로 복사해주세요.');
+  }
+
+  document.body.removeChild(textarea);
 }
 
 function copyAddress() {

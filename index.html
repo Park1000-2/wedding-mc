@@ -17,6 +17,12 @@
     rel="stylesheet"
   />
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Kakao SDK -->
+  <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
   <!-- Naver Maps API -->
   <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=u5qu04h2jt"></script>
 
@@ -415,22 +421,15 @@
       </div>
 
       <!-- 공유 버튼들 -->
-      <div class="flex flex-col gap-3 w-full max-w-xs px-6">
-        <button
-          onclick="shareKakao()"
-          class="w-full rounded-lg py-3 text-sm font-medium"
-          style="background-color: #FEE500; color: #000;"
-        >
-          카카오톡으로 청첩장 전하기
-          <span class="float-right">→</span>
+      <div class="share-buttons">
+        <button class="share-btn kakao-share-btn" onclick="shareKakao()" title="카카오톡 공유">
+          <i class="fas fa-comment"></i>
         </button>
-        <button
-          onclick="copyLink()"
-          class="w-full rounded-lg py-3 text-sm font-medium text-white"
-          style="background-color: rgba(255,255,255,0.3);"
-        >
-          청첩장 주소 복사하기
-          <span class="float-right">📋</span>
+        <button class="share-btn sms-share-btn" onclick="shareSMS()" title="문자 공유">
+          <i class="fas fa-sms"></i>
+        </button>
+        <button class="share-btn link-share-btn" onclick="copyLink()" title="링크 복사">
+          <i class="fas fa-link"></i>
         </button>
       </div>
 

@@ -90,3 +90,61 @@ body {
 .btn-accent:hover {
   opacity: 0.9;
 }
+
+/* Share buttons */
+.share-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.share-btn {
+  width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-btn i {
+  font-size: 2rem;
+}
+
+.share-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.kakao-share-btn {
+  background: #FEE500;
+  color: #3C1E1E;
+}
+
+.kakao-share-btn:hover {
+  background: #fdd800;
+}
+
+.sms-share-btn {
+  background: #8b7355;
+  color: white;
+}
+
+.sms-share-btn:hover {
+  background: #6d5a43;
+}
+
+.link-share-btn {
+  background: #4A90E2;
+  color: white;
+}
+
+.link-share-btn:hover {
+  background: #357ABD;
+}
