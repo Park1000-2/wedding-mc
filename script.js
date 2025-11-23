@@ -24,7 +24,7 @@ function shareKakao() {
         objectType: 'feed',
         content: {
             title: '박한천 ♥ 정수진 결혼합니다',
-            description: '일시: 2026.10.31. (토) 12:10\n장소: SW 컨벤션 센터 11F',
+            description: '일시: 2026.10.31 (토) 12:10 PM\n장소: SW 컨벤션 센터 11F',
             imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
             link: {
                 mobileWebUrl: window.location.href,
@@ -41,6 +41,56 @@ function shareKakao() {
             }
         ]
     });
+}
+
+// 문자(SMS) 공유하기
+function shareSMS() {
+    const message = `박한천 ♥ 정수진 결혼합니다
+
+일시: 2026년 10월 31일 (토) 오후 12시 10분
+장소: SW 컨벤션 센터 11F
+
+모바일 청첩장: https://card-test.hcsj.store/`;
+
+    const smsUrl = `sms:?body=${encodeURIComponent(message)}`;
+    window.location.href = smsUrl;
+}
+
+// 링크 복사하기
+function copyLink() {
+    const link = 'https://card-test.hcsj.store/';
+
+    // Clipboard API 사용
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(link).then(() => {
+            alert('링크가 복사되었습니다!');
+        }).catch(err => {
+            // Clipboard API 실패시 fallback
+            fallbackCopyLink(link);
+        });
+    } else {
+        // Clipboard API 미지원시 fallback
+        fallbackCopyLink(link);
+    }
+}
+
+// 링크 복사 fallback 함수
+function fallbackCopyLink(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+
+    try {
+        document.execCommand('copy');
+        alert('링크가 복사되었습니다!');
+    } catch (err) {
+        alert('복사에 실패했습니다. 수동으로 복사해주세요.');
+    }
+
+    document.body.removeChild(textarea);
 }
 
 // 갤러리 기능

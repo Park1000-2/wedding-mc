@@ -8,7 +8,7 @@
     <!-- Open Graph 메타 태그 -->
     <meta property='og:type' content='website'>
     <meta property='og:title' content='박한천 ♥ 정수진 결혼합니다'>
-    <meta property='og:description' content='2026년 10월 31일 토요일 오후 12시 10분 | SW 컨벤션 센터'>
+    <meta property='og:description' content='2026.10.31. 토요일 오후 12시 10분 | SW 컨벤션 센터 11F'>
     <meta property='og:site_name' content='모바일 청첩장'>
     <link href='https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Noto+Sans+KR:wght@300;400;500&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css'>
@@ -30,13 +30,30 @@
             <span class='name-right'>정수진</span>
         </div>
         <p class='date'>2026.10.31 SAT. 12:10 PM</p>
-        <p class='hall'>SW 컨벤션 센터</p>
+        <p class='hall'>SW 컨벤션 센터 11F</p>
     </div>
 </section>
 
 <section class='section card'>
     <h2 class='section-title'>초대합니다</h2>
     <p class='intro'>서로의 마음에 확신이 들어 한 자리에 서게 되었습니다.<br>귀한 걸음 하시어 따뜻한 축복을 나눠 주시면 감사하겠습니다.</p>
+</section>
+
+<section class='section card'>
+    <h2 class='section-title'>혼주</h2>
+    <div class='parents-info'>
+        <div class='parent-group'>
+            <h3 class='parent-side'>신랑측 혼주</h3>
+            <p class='parent-name'>아버지 <span>박성준</span></p>
+            <p class='parent-name'>어머니 <span>김나윤</span></p>
+        </div>
+        <div class='parent-divider'></div>
+        <div class='parent-group'>
+            <h3 class='parent-side'>신부측 혼주</h3>
+            <p class='parent-name'>아버지 <span></span></p>
+            <p class='parent-name'>어머니 <span></span></p>
+        </div>
+    </div>
 </section>
 
 <section class='section'>
@@ -67,13 +84,13 @@
 
 <section class='section card'>
     <h2 class='section-title'>Location</h2>
-    <p class='hall-text'>SW 컨벤션 센터</p>
+    <p class='hall-text'>SW 컨벤션 센터 11F</p>
     <div class='map-buttons'>
         <a class='map-btn naver-btn' href='https://naver.me/GzE9CXtD' target='_blank'>
             <i class='fas fa-map-marker-alt'></i>
             <span>NAVER</span>
         </a>
-        <a class='map-btn kakao-btn' href='https://place.map.kakao.com/' target='_blank'>
+        <a class='map-btn kakao-btn' href='https://place.map.kakao.com/7918739' target='_blank'>
             <i class='fas fa-map-marked-alt'></i>
             <span>KAKAO</span>
         </a>
@@ -83,18 +100,25 @@
 <section class='section card'>
     <h2 class='section-title'>Contact</h2>
     <div class='contact-row'>
-        <div><h3>신랑</h3><p class='person-name'>박한천</p><a class='contact-btn' href='tel:01012341234'>📞 전화</a><a class='contact-btn' href='sms:01012341234'>✉️ 문자</a></div>
-        <div><h3>신부</h3><p class='person-name'>정수진</p><a class='contact-btn' href='tel:01056785678'>📞 전화</a><a class='contact-btn' href='sms:01056785678'>✉️ 문자</a></div>
+        <div><h3>신랑</h3><p class='person-name'>박한천</p><a class='contact-btn' href='tel:01079005871'>📞 전화</a><a class='contact-btn' href='sms:01079005871'>✉️ 문자</a></div>
+        <div><h3>신부</h3><p class='person-name'>정수진</p><a class='contact-btn' href='tel:01046166267'>📞 전화</a><a class='contact-btn' href='sms:01046166267'>✉️ 문자</a></div>
     </div>
     <button class='account-btn' onclick='openAccountModal()'>💌 마음 전하실 곳</button>
 </section>
 
 <section class='section card'>
     <h2 class='section-title'>공유하기</h2>
-    <button class='kakao-share-btn' onclick='shareKakao()'>
-        <i class='fas fa-comment'></i>
-        <span>카카오톡 공유하기</span>
-    </button>
+    <div class='share-buttons'>
+        <button class='share-btn kakao-share-btn' onclick='shareKakao()' title='카카오톡 공유'>
+            <i class='fas fa-comment'></i>
+        </button>
+        <button class='share-btn sms-share-btn' onclick='shareSMS()' title='문자 공유'>
+            <i class='fas fa-sms'></i>
+        </button>
+        <button class='share-btn link-share-btn' onclick='copyLink()' title='링크 복사'>
+            <i class='fas fa-link'></i>
+        </button>
+    </div>
 </section>
 
 <div id='accountModal' class='modal account-modal'>

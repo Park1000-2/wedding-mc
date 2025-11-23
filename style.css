@@ -314,6 +314,45 @@ body {
     background: #6d5a43;
 }
 
+/* 혼주 섹션 */
+.parents-info {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.parent-group {
+    flex: 1;
+    text-align: center;
+}
+
+.parent-side {
+    font-size: 1rem;
+    color: #8b7355;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.parent-name {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.parent-name span {
+    font-weight: 500;
+    color: #333;
+}
+
+.parent-divider {
+    width: 1px;
+    background: #e0e0e0;
+    align-self: stretch;
+}
+
 /* 연락처 섹션 */
 .contact-row {
     display: grid;
@@ -460,35 +499,62 @@ body {
     background: #6d5a43;
 }
 
-/* 카카오톡 공유 버튼 */
-.kakao-share-btn {
+/* 공유 버튼 */
+.share-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.share-btn {
+    width: 70px;
+    height: 70px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    width: 80%;
-    max-width: 300px;
-    margin: 0 auto;
-    padding: 15px;
-    background: #FEE500;
-    color: #3C1E1E;
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.kakao-share-btn i {
-    font-size: 1.3rem;
+.share-btn i {
+    font-size: 2rem;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.kakao-share-btn {
+    background: #FEE500;
+    color: #3C1E1E;
 }
 
 .kakao-share-btn:hover {
     background: #fdd800;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(254, 229, 0, 0.3);
+}
+
+.sms-share-btn {
+    background: #8b7355;
+    color: white;
+}
+
+.sms-share-btn:hover {
+    background: #6d5a43;
+}
+
+.link-share-btn {
+    background: #4A90E2;
+    color: white;
+}
+
+.link-share-btn:hover {
+    background: #357ABD;
 }
 
 /* 방명록 */
@@ -604,5 +670,14 @@ body {
 
     .contact-row {
         grid-template-columns: 1fr;
+    }
+
+    .parents-info {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .parent-divider {
+        display: none;
     }
 }
