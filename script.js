@@ -49,10 +49,17 @@ function initNaverMap() {
 
     // 정보 창 생성
     const infoWindow = new naver.maps.InfoWindow({
-        content: '<div style="padding:10px;text-align:center;"><strong>SW 컨벤션 센터 11F</strong><br>서울 종로구 지봉로 19</div>'
+        content: '<div style="padding:12px 15px;text-align:center;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><strong style="font-size:14px;color:#8b7355;">SW 컨벤션 센터 11F</strong><br><span style="font-size:12px;color:#666;">서울 종로구 지봉로 19</span></div>',
+        borderWidth: 0,
+        backgroundColor: 'transparent',
+        anchorSize: new naver.maps.Size(10, 10),
+        pixelOffset: new naver.maps.Point(0, -10)
     });
 
-    // 마커 클릭시 정보 창 표시
+    // 지도 로드시 정보 창 자동으로 열기
+    infoWindow.open(map, marker);
+
+    // 마커 클릭시 정보 창 토글
     naver.maps.Event.addListener(marker, 'click', function() {
         if (infoWindow.getMap()) {
             infoWindow.close();
