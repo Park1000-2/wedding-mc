@@ -10,6 +10,7 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
     color: #333;
     line-height: 1.6;
+    font-size: 20px;
 }
 
 /* Hero 섹션 */
@@ -60,7 +61,7 @@ body {
 
 .name-left, .name-right {
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: 400;
     color: #666;
     letter-spacing: 1px;
@@ -75,14 +76,14 @@ body {
 
 .month, .day {
     font-family: 'Playfair Display', serif;
-    font-size: 3rem;
+    font-size: 4.5rem;
     font-weight: 300;
     color: #999;
     line-height: 1;
 }
 
 .date {
-    font-size: 1rem;
+    font-size: 1.35rem;
     margin-bottom: 15px;
     letter-spacing: 1.5px;
     color: #888;
@@ -90,7 +91,7 @@ body {
 }
 
 .hall {
-    font-size: 1rem;
+    font-size: 1.35rem;
     color: #888;
     font-weight: 300;
     letter-spacing: 0.5px;
@@ -112,7 +113,7 @@ body {
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     margin-bottom: 30px;
     color: #8b7355;
@@ -122,7 +123,7 @@ body {
     text-align: center;
     line-height: 1.8;
     color: #666;
-    font-size: 1rem;
+    font-size: 1.3rem;
 }
 
 /* 갤러리 슬라이더 */
@@ -233,7 +234,7 @@ body {
 /* 위치 섹션 */
 .hall-text {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     margin-bottom: 8px;
     color: #666;
     font-weight: 500;
@@ -241,7 +242,7 @@ body {
 
 .address-text {
     text-align: center;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
     color: #888;
     font-weight: 300;
@@ -349,42 +350,27 @@ body {
 }
 
 /* 혼주 섹션 */
-.parents-info {
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.parent-group {
-    flex: 1;
+.parents-info-new {
     text-align: center;
+    padding: 40px 20px;
 }
 
-.parent-side {
-    font-size: 1rem;
-    color: #8b7355;
-    margin-bottom: 20px;
-    font-weight: 500;
-}
-
-.parent-name {
-    font-size: 0.95rem;
+.parent-line {
+    font-size: 1.2rem;
     color: #666;
-    margin-bottom: 12px;
-    line-height: 1.6;
+    margin-bottom: 15px;
+    line-height: 1.8;
+    font-weight: 300;
 }
 
-.parent-name span {
+.parent-line:last-child {
+    margin-bottom: 0;
+}
+
+.child-name {
     font-weight: 500;
-    color: #333;
-}
-
-.parent-divider {
-    width: 1px;
-    background: #e0e0e0;
-    align-self: stretch;
+    color: #8b7355;
+    font-size: 1.1rem;
 }
 
 /* 연락처 섹션 */

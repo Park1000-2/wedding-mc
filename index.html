@@ -41,19 +41,9 @@
 </section>
 
 <section class='section card'>
-    <h2 class='section-title'>혼주</h2>
-    <div class='parents-info'>
-        <div class='parent-group'>
-            <h3 class='parent-side'>신랑측 혼주</h3>
-            <p class='parent-name'>아버지 <span>박성준</span></p>
-            <p class='parent-name'>어머니 <span>김나윤</span></p>
-        </div>
-        <div class='parent-divider'></div>
-        <div class='parent-group'>
-            <h3 class='parent-side'>신부측 혼주</h3>
-            <p class='parent-name'>아버지 <span></span></p>
-            <p class='parent-name'>어머니 <span></span></p>
-        </div>
+    <div class='parents-info-new'>
+        <p class='parent-line'>박성준 · 김나윤의 아들 <span class='child-name'>한천</span></p>
+        <p class='parent-line'>정상만 · 손정자의 딸 <span class='child-name'>수진</span></p>
     </div>
 </section>
 
@@ -88,7 +78,7 @@
     <p class='hall-text'>SW 컨벤션 센터 11F</p>
     <p class='address-text'>서울 종로구 지봉로 19 (동묘역 6번 출구)</p>
     <div class='map-container'>
-        <div id="map" style="width: 70%; height: 300px; margin:auto"></div>
+        <div id="map" style="width: 100%; height: 300px;"></div>
     </div>
     <div class='map-buttons'>
         <a class='map-btn naver-btn' href='https://naver.me/GzE9CXtD' target='_blank'>
@@ -139,27 +129,17 @@
             <button class='tab' onclick="showTab('bride')">신부 측</button>
         </div>
         <div id='groom' class='tab-content active'>
-            <p class='account-name'>신랑 아버지: 박OO</p>
+            <p class='account-name'>신랑 아버지: 박성준</p>
             <p class='account-number'>국민은행 123456-01-123456</p>
             <button class='copy-btn' onclick="copyText('국민은행 123456-01-123456')">계좌 복사</button>
         </div>
         <div id='bride' class='tab-content'>
-            <p class='account-name'>신부 아버지: 정OO</p>
+            <p class='account-name'>신부 아버지: 정상만</p>
             <p class='account-number'>우리은행 1002-123-456789</p>
             <button class='copy-btn' onclick="copyText('우리은행 1002-123-456789')">계좌 복사</button>
         </div>
     </div>
 </div>
-
-<section class='section card'>
-    <h2 class='section-title'>방명록</h2>
-    <div class='guestbook-form'>
-        <input id='guestName' type='text' placeholder='이름' />
-        <textarea id='guestMessage' placeholder='메시지를 남겨주세요'></textarea>
-        <button class='guestbook-btn' onclick='addGuestbook()'>작성하기</button>
-    </div>
-    <div id='guestList' class='guestbook-list'></div>
-</section>
 
 <script src='script.js'></script>
 </body></html>
