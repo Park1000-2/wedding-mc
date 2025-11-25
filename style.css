@@ -1,10 +1,10 @@
 :root {
-  /* Teal Theme (Default) */
-  --bg-primary: #c5e2e2;
-  --bg-secondary: #9ab8b8;
-  --bg-light: rgb(237, 247, 247);
-  --accent-primary: rgb(108, 180, 180);
-  --accent-secondary: #82bfbf;
+  /* Greenery Theme (Default) */
+  --bg-primary: #e8f0e8;
+  --bg-secondary: #c5d8c5;
+  --bg-light: rgb(245, 250, 245);
+  --accent-primary: rgb(120, 160, 120);
+  --accent-secondary: #9cb89c;
   --text-primary: #111;
 }
 

@@ -21,19 +21,6 @@ window.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// 결혼식 날짜 (KST 기준)
-const weddingDate = new Date("2026-10-31T12:10:00+09:00");
-
-function updateDplus() {
-  const now = new Date();
-  const dayDiff = Math.floor((now.getTime() - weddingDate.getTime()) / (1000 * 60 * 60 * 24));
-  const label = dayDiff < 0 ? `D - ${Math.abs(dayDiff)}` : `D + ${dayDiff}`;
-  document.getElementById('dplus-label').textContent = label;
-}
-
-updateDplus();
-setInterval(updateDplus, 1000 * 60 * 60); // Update every hour
-
 // Initialize Naver Map
 window.addEventListener('load', function() {
   if (typeof naver !== 'undefined' && naver.maps) {
@@ -214,13 +201,63 @@ function makeCall(phone) {
 }
 
 // Gallery load more
-let galleryExpanded = false;
+var galleryCurrentIndex = 0;
+var galleryAdditionalImages = [
+  'assets/images/gallery/10.jpg',
+  'assets/images/gallery/11.jpg',
+  'assets/images/gallery/12.jpg'
+];
+
 function loadMoreImages() {
-  if (!galleryExpanded) {
-    alert('더 많은 이미지를 로드하는 기능입니다.');
-    galleryExpanded = true;
-    document.getElementById('load-more-btn').style.display = 'none';
+  const gallery = document.getElementById('gallery-grid');
+  const loadMoreBtn = document.getElementById('load-more-btn');
+
+  if (!gallery || !loadMoreBtn) {
+    console.error('Gallery elements not found');
+    return;
   }
+
+  // Load remaining images
+  const endIndex = Math.min(galleryCurrentIndex + 3, galleryAdditionalImages.length);
+
+  for (let i = galleryCurrentIndex; i < endIndex; i++) {
+    const imageDiv = document.createElement('div');
+    imageDiv.className = 'flex justify-center items-center';
+    imageDiv.innerHTML = `
+      <div class="relative overflow-hidden aspect-square w-full">
+        <img
+          alt="gallery-${i + 10}"
+          src="${galleryAdditionalImages[i]}"
+          class="object-cover w-full h-full cursor-pointer"
+          onclick="openImageModal(this.src)"
+        />
+      </div>
+    `;
+    gallery.appendChild(imageDiv);
+  }
+
+  galleryCurrentIndex = endIndex;
+
+  // Hide button if all images are loaded
+  if (galleryCurrentIndex >= galleryAdditionalImages.length) {
+    loadMoreBtn.style.display = 'none';
+  }
+}
+
+// Image modal functionality
+function openImageModal(src) {
+  const modal = document.createElement('div');
+  modal.className = 'fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50';
+  modal.innerHTML = `
+    <button onclick="this.parentElement.remove()" class="absolute top-4 right-4 text-white text-4xl z-10">&times;</button>
+    <img src="${src}" class="max-w-full max-h-full object-contain px-4" />
+  `;
+  modal.onclick = function(e) {
+    if (e.target === modal || e.target.tagName === 'BUTTON') {
+      modal.remove();
+    }
+  };
+  document.body.appendChild(modal);
 }
 
 // Close modal on outside click
