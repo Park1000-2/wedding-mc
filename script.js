@@ -27,7 +27,7 @@ window.addEventListener('load', function() {
     const mapDiv = document.getElementById('map');
     if (!mapDiv) return;
 
-    // SW 컨벤션센터 좌표
+    // SW컨벤션센터 좌표
     const location = new naver.maps.LatLng(37.571711, 127.015185);
 
     // 지도 생성
@@ -44,12 +44,12 @@ window.addEventListener('load', function() {
     const marker = new naver.maps.Marker({
       position: location,
       map: map,
-      title: 'SW 컨벤션센터'
+      title: 'SW컨벤션센터'
     });
 
     // 정보 창 생성
     const infoWindow = new naver.maps.InfoWindow({
-      content: '<div style="padding:12px 15px;text-align:center;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><strong style="font-size:14px;color:#8b7355;">SW 컨벤션센터 11층</strong><br><span style="font-size:12px;color:#666;">서울 종로구 지봉로 19</span></div>',
+      content: '<div style="padding:12px 15px;text-align:center;background:white;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.15);"><strong style="font-size:14px;color:#8b7355;">SW컨벤션센터 11층</strong><br><span style="font-size:12px;color:#666;">서울 종로구 지봉로 19</span></div>',
       borderWidth: 0,
       backgroundColor: 'transparent',
       anchorSize: new naver.maps.Size(10, 10),
@@ -81,7 +81,7 @@ function shareKakao() {
     objectType: 'feed',
     content: {
       title: '박한천 ♥ 정수진 결혼합니다',
-      description: '일시: 2026.10.31 (토) 12:10 PM\n장소: SW 컨벤션센터 11층',
+      description: '일시: 2026.10.31 (토) 12:10 PM\n장소: SW컨벤션센터 11층',
       imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
       link: {
         mobileWebUrl: window.location.href,
@@ -104,7 +104,7 @@ function shareSMS() {
   const message = `박한천 ♥ 정수진 결혼합니다
 
 일시: 2026년 10월 31일 (토) 오후 12시 10분
-장소: SW 컨벤션센터 11층
+장소: SW컨벤션센터 11층
 
 모바일 청첩장: ${window.location.href}`;
 
