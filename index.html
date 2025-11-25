@@ -336,7 +336,7 @@
       <div class="text-center mb-6">
         <p class="font-medium text-base">SW 컨벤션 센터 11F</p>
         <div class="flex items-center justify-center gap-2 mt-2 text-sm text-gray-600">
-          <span>서울 종로구 지봉로 19 (동묘역 6번 출구)</span>
+          <span>서울 종로구 지봉앞역 6번 출구)</span>
           <button onclick="copyAddress()" class="text-gray-400">📋</button>
         </div>
       </div>
@@ -426,24 +426,24 @@
       <!-- Header -->
       <div class="flex justify-between items-center mb-6">
         <div>
-          <h3 class="text-lg font-medium">축하 연락하기</h3>
-          <p class="text-sm text-gray-500 mt-1">직접 축하의 마음을 전해보세요</p>
+          <h3 class="text-xl font-medium">축하 연락하기</h3>
+          <p class="text-sm text-gray-400 mt-1">직접 축하의 마음을 전해보세요</p>
         </div>
-        <button onclick="closeContactModal()" class="text-gray-400 text-2xl">&times;</button>
+        <button onclick="closeContactModal()" class="text-gray-400 text-3xl leading-none">&times;</button>
       </div>
 
       <!-- Tabs -->
       <div class="flex border-b mb-6">
         <button
           id="tab-groom"
-          class="tab-button active text-sm"
+          class="tab-button active text-base"
           onclick="switchTab('groom')"
         >
           신랑에게
         </button>
         <button
           id="tab-bride"
-          class="tab-button text-sm text-gray-400"
+          class="tab-button text-base text-gray-400"
           onclick="switchTab('bride')"
         >
           신부에게
@@ -452,66 +452,72 @@
 
       <!-- Groom contacts -->
       <div id="groom-contacts" class="space-y-4">
-        <div class="space-y-3">
-          <div class="flex justify-between items-center">
-            <span class="text-sm">박한천 <span class="text-gray-400 ml-8">신랑</span></span>
-            <div class="flex gap-2">
-              <button onclick="sendSMS('01079005871')" class="btn-accent px-4 py-2 text-white text-xs rounded-lg">문자 보내기</button>
-              <button onclick="makeCall('01079005871')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
-            </div>
+        <!-- 신랑 -->
+        <div class="bg-gray-50 rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <p class="text-base font-medium">박한천 <span class="text-sm text-gray-500 ml-4">신랑</span></p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="sendSMS('01079005871')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
+            <button onclick="makeCall('01079005871')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
         </div>
 
-        <div class="space-y-3">
-          <div class="flex justify-between items-center">
-            <span class="text-sm">박성준 <span class="text-gray-400 ml-8">신랑 아버지</span></span>
-            <div class="flex gap-2">
-              <button onclick="sendSMS('01043796186')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
-              <button onclick="makeCall('01043796186')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
-            </div>
+        <!-- 신랑 아버지 -->
+        <div class="bg-gray-50 rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <p class="text-base font-medium">박성준 <span class="text-sm text-gray-500 ml-4">신랑 아버지</span></p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="sendSMS('01043796186')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
+            <button onclick="makeCall('01043796186')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
         </div>
 
-        <div class="space-y-3">
-          <div class="flex justify-between items-center">
-            <span class="text-sm">김나윤 <span class="text-gray-400 ml-8">신랑 어머니</span></span>
-            <div class="flex gap-2">
-              <button onclick="sendSMS('01020806186')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
-              <button onclick="makeCall('01020806186')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
-            </div>
+        <!-- 신랑 어머니 -->
+        <div class="bg-gray-50 rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <p class="text-base font-medium">김나윤 <span class="text-sm text-gray-500 ml-4">신랑 어머니</span></p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="sendSMS('01020806186')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
+            <button onclick="makeCall('01020806186')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
         </div>
       </div>
 
       <!-- Bride contacts -->
       <div id="bride-contacts" class="space-y-4" style="display: none;">
-        <div class="space-y-3">
-          <div class="flex justify-between items-center">
-            <span class="text-sm">정수진 <span class="text-gray-400 ml-8">신부</span></span>
-            <div class="flex gap-2">
-              <button onclick="sendSMS('01046166267')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
-              <button onclick="makeCall('01046166267')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
-            </div>
+        <!-- 신부 -->
+        <div class="bg-gray-50 rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <p class="text-base font-medium">정수진 <span class="text-sm text-gray-500 ml-4">신부</span></p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="sendSMS('01046166267')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
+            <button onclick="makeCall('01046166267')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
         </div>
 
-        <div class="space-y-3">
-          <div class="flex justify-between items-center">
-            <span class="text-sm">정상만 <span class="text-gray-400 ml-8">신부 아버지</span></span>
-            <div class="flex gap-2">
-              <button onclick="sendSMS('01012345678')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
-              <button onclick="makeCall('01012345678')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
-            </div>
+        <!-- 신부 아버지 -->
+        <div class="bg-gray-50 rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <p class="text-base font-medium">정상만 <span class="text-sm text-gray-500 ml-4">신부 아버지</span></p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="sendSMS('01012345678')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
+            <button onclick="makeCall('01012345678')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
         </div>
 
-        <div class="space-y-3">
-          <div class="flex justify-between items-center">
-            <span class="text-sm">손정자 <span class="text-gray-400 ml-8">신부 어머니</span></span>
-            <div class="flex gap-2">
-              <button onclick="sendSMS('01012345678')" class="px-4 py-2 btn-accent text-white text-xs rounded-lg">문자 보내기</button>
-              <button onclick="makeCall('01012345678')" class="px-4 py-2 bg-gray-700 text-white text-xs rounded-lg">전화하기</button>
-            </div>
+        <!-- 신부 어머니 -->
+        <div class="bg-gray-50 rounded-xl p-5">
+          <div class="flex justify-between items-center mb-3">
+            <p class="text-base font-medium">손정자 <span class="text-sm text-gray-500 ml-4">신부 어머니</span></p>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="sendSMS('01012345678')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
+            <button onclick="makeCall('01012345678')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
         </div>
       </div>

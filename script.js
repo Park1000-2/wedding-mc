@@ -205,7 +205,9 @@ var galleryCurrentIndex = 0;
 var galleryAdditionalImages = [
   'assets/images/gallery/10.jpg',
   'assets/images/gallery/11.jpg',
-  'assets/images/gallery/12.jpg'
+  'assets/images/gallery/12.jpg',
+  'assets/images/gallery/13.jpg',
+  'assets/images/gallery/14.jpg'
 ];
 
 function loadMoreImages() {
