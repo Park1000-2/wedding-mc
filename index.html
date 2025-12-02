@@ -411,16 +411,41 @@
 
       <!-- Transportation info -->
       <div class="w-full px-8 space-y-6 text-sm">
+        <!-- 지하철 -->
         <div class="border-t pt-6">
           <div class="flex items-start gap-3 mb-3">
             <span class="text-teal-600">🚇</span>
             <span class="font-medium">지하철</span>
           </div>
-          <div class="pl-8 space-y-1 text-gray-600">
-            <p>1호선, 6호선 동묘앞역 6번 출구</p>
+          <div class="pl-8 space-y-2 text-gray-600">
+            <p><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-800 text-white text-xs font-bold mr-1">1</span><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-amber-600 text-white text-xs font-bold mr-1">6</span> 동묘앞역 6번 출구 바로 앞</p>
+            <p><span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-sky-500 text-white text-xs font-bold mr-1">4</span> 동대문역 4번 출구 도보 5분 이내</p>
           </div>
         </div>
 
+        <!-- 버스 -->
+        <div class="border-t pt-6">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-teal-600">🚌</span>
+            <span class="font-medium">버스</span>
+          </div>
+          <div class="pl-8 space-y-2 text-gray-600 text-xs">
+            <div class="flex">
+              <span class="w-36 flex-shrink-0">동묘앞역 6번 출구 하차</span>
+              <span class="text-gray-800">142</span>
+            </div>
+            <div class="flex">
+              <span class="w-36 flex-shrink-0">동묘앞역 하차</span>
+              <span class="text-gray-800">1014</span>
+            </div>
+            <div class="flex">
+              <span class="w-36 flex-shrink-0">동대문역.흥인지문(중) 하차</span>
+              <span class="text-gray-800">101, 103, 111, 105, 144, 152, 201, 206, 261, 262, 270, 271, 370, 420, 720, 721, 2112, 2233, 9301, 6002</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 주차 -->
         <div class="border-t pt-6">
           <div class="flex items-start gap-3 mb-3">
             <span class="text-teal-600">🅿️</span>
@@ -428,6 +453,7 @@
           </div>
           <div class="pl-8 space-y-1 text-gray-600">
             <p>건물 내 주차 가능</p>
+            <p class="text-sm text-gray-500 mt-2">• 1시간 30분 무료, 초과 시 10분당 1,000원</p>
           </div>
         </div>
       </div>
