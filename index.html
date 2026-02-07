@@ -111,10 +111,14 @@
         </div>
 
         <!-- 달력 -->
+        <!-- 월 표시 -->
+        <div class="text-center mb-0">
+          <p class="tracking-[0.25em] text-base font-bold text-[#111] opacity-70">10월</p>
+        </div>
         <div class="w-full px-5">
           <div class="h-px w-full my-8 bg-black opacity-10"></div>
 
-          <div class="grid grid-cols-7 text-center gap-y-6 text-sm">
+          <div class="grid grid-cols-7 place-items-center gap-y-6 text-sm">
             <!-- 요일 -->
             <div class="text-red-400">일</div>
             <div>월</div>
@@ -125,39 +129,42 @@
             <div>토</div>
 
             <!-- 10월 달력 (31일 강조) -->
-            <div></div><div></div><div></div><div></div>
-            <div class="font-extralight">1</div>
-            <div class="font-extralight">2</div>
-            <div class="font-extralight">3</div>
-            <div class="font-extralight text-red-400">4</div>
-            <div class="font-extralight">5</div>
-            <div class="font-extralight">6</div>
-            <div class="font-extralight">7</div>
-            <div class="font-extralight">8</div>
-            <div class="font-extralight">9</div>
-            <div class="font-extralight">10</div>
-            <div class="font-extralight text-red-400">11</div>
-            <div class="font-extralight">12</div>
-            <div class="font-extralight">13</div>
-            <div class="font-extralight">14</div>
-            <div class="font-extralight">15</div>
-            <div class="font-extralight">16</div>
-            <div class="font-extralight">17</div>
-            <div class="font-extralight text-red-400">18</div>
-            <div class="font-extralight">19</div>
-            <div class="font-extralight">20</div>
-            <div class="font-extralight">21</div>
-            <div class="font-extralight">22</div>
-            <div class="font-extralight">23</div>
-            <div class="font-extralight">24</div>
-            <div class="font-extralight text-red-400">25</div>
-            <div class="font-extralight">26</div>
-            <div class="font-extralight">27</div>
-            <div class="font-extralight">28</div>
-            <div class="font-extralight">29</div>
-            <div class="font-extralight">30</div>
-            <div class="font-extralight flex items-center justify-center">
-              <div class="text-white rounded-full w-8 h-8 flex justify-center items-center"
+            <div class="h-8"></div>
+            <div class="h-8"></div>
+            <div class="h-8"></div>
+            <div class="h-8"></div>
+            <div class="font-extralight h-8 flex items-center justify-center">1</div>
+            <div class="font-extralight h-8 flex items-center justify-center">2</div>
+            <div class="font-extralight h-8 flex items-center justify-center">3</div>
+            <div class="font-extralight text-red-400 h-8 flex items-center justify-center">4</div>
+            <div class="font-extralight h-8 flex items-center justify-center">5</div>
+            <div class="font-extralight h-8 flex items-center justify-center">6</div>
+            <div class="font-extralight h-8 flex items-center justify-center">7</div>
+            <div class="font-extralight h-8 flex items-center justify-center">8</div>
+            <div class="font-extralight h-8 flex items-center justify-center">9</div>
+            <div class="font-extralight h-8 flex items-center justify-center">10</div>
+            <div class="font-extralight text-red-400 h-8 flex items-center justify-center">11</div>
+            <div class="font-extralight h-8 flex items-center justify-center">12</div>
+            <div class="font-extralight h-8 flex items-center justify-center">13</div>
+            <div class="font-extralight h-8 flex items-center justify-center">14</div>
+            <div class="font-extralight h-8 flex items-center justify-center">15</div>
+            <div class="font-extralight h-8 flex items-center justify-center">16</div>
+            <div class="font-extralight h-8 flex items-center justify-center">17</div>
+            <div class="font-extralight text-red-400 h-8 flex items-center justify-center">18</div>
+            <div class="font-extralight h-8 flex items-center justify-center">19</div>
+            <div class="font-extralight h-8 flex items-center justify-center">20</div>
+            <div class="font-extralight h-8 flex items-center justify-center">21</div>
+            <div class="font-extralight h-8 flex items-center justify-center">22</div>
+            <div class="font-extralight h-8 flex items-center justify-center">23</div>
+            <div class="font-extralight h-8 flex items-center justify-center">24</div>
+            <div class="font-extralight text-red-400 h-8 flex items-center justify-center">25</div>
+            <div class="font-extralight h-8 flex items-center justify-center">26</div>
+            <div class="font-extralight h-8 flex items-center justify-center">27</div>
+            <div class="font-extralight h-8 flex items-center justify-center">28</div>
+            <div class="font-extralight h-8 flex items-center justify-center">29</div>
+            <div class="font-extralight h-8 flex items-center justify-center">30</div>
+            <div class="font-extralight h-8 flex items-center justify-center">
+              <div class="w-8 h-8 text-white rounded-full flex items-center justify-center"
                    style="background-color: var(--accent-primary);">
                 31
               </div>
@@ -166,6 +173,7 @@
 
           <div class="h-px w-full my-8 bg-black opacity-10"></div>
         </div>
+
       </div>
     </section>
 
@@ -354,11 +362,85 @@
           <div class="flex justify-center items-center">
             <div class="relative overflow-hidden aspect-square w-full">
               <img
-                alt="gallery-14"
-                src="assets/images/gallery/14.jpg"
-                class="object-cover w-full h-full cursor-pointer"
-                onclick="openImageModal(this.src)"
+                      alt="gallery-14"
+                      src="assets/images/gallery/14.jpg"
+                      class="object-cover w-full h-full cursor-pointer"
+                      onclick="openImageModal(this.src)"
               />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                      alt="gallery-15"
+                      src="assets/images/gallery/15.jpg"
+                      class="object-cover w-full h-full cursor-pointer"
+                      onclick="openImageModal(this.src)"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                      alt="gallery-16"
+                      src="assets/images/gallery/16.jpg"
+                      class="object-cover w-full h-full cursor-pointer"
+                      onclick="openImageModal(this.src)"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                      alt="gallery-17"
+                      src="assets/images/gallery/17.jpg"
+                      class="object-cover w-full h-full cursor-pointer"
+                      onclick="openImageModal(this.src)"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                      alt="gallery-18"
+                      src="assets/images/gallery/18.jpg"
+                      class="object-cover w-full h-full cursor-pointer"
+                      onclick="openImageModal(this.src)"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                      alt="gallery-19"
+                      src="assets/images/gallery/19.jpg"
+                      class="object-cover w-full h-full cursor-pointer"
+                      onclick="openImageModal(this.src)"
+              />
+            </div>
+          </div>
+          <div class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <img
+                      alt="gallery-20"
+                      src="assets/images/gallery/20.jpg"
+                      class="object-cover w-full h-full cursor-pointer"
+                      onclick="openImageModal(this.src)"
+              />
+            </div>
+          </div>
+
+          <!-- + 더보기 타일 (9장 노출 후, 6장씩 추가) -->
+          <div id="gallery-load-more-tile" class="flex justify-center items-center">
+            <div class="relative overflow-hidden aspect-square w-full">
+              <button
+                      type="button"
+                      class="w-full h-full flex items-center justify-center border border-dashed border-black/20"
+                      style="background-color: rgba(0,0,0,0.02);"
+                      aria-label="갤러리 더보기"
+              >
+                <span class="text-2xl font-light text-black/50">+</span>
+              </button>
             </div>
           </div>
         </div>
@@ -481,6 +563,18 @@
         </button>
       </div>
 
+      <!-- 캘린더 추가 버튼 -->
+      <div class="w-full flex justify-center mt-10">
+        <button
+                id="add-to-calendar-btn"
+                type="button"
+                class="w-full max-w-xs h-12 flex items-center justify-center rounded-lg text-sm font-medium text-white"
+                style="background-color: var(--accent-secondary);"
+        >
+          📅 캘린더에 일정 추가하기
+        </button>
+      </div>
+
     </section>
   </div>
 
@@ -580,8 +674,12 @@
             <p class="text-base font-medium">손정자 <span class="text-sm text-gray-500 ml-4">신부 어머니</span></p>
           </div>
           <div class="flex gap-2">
-            <button onclick="sendSMS('01046166267')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
-            <button onclick="makeCall('01046166267')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
+            <button onclick="sendSMS('01046166267')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white"
+                    style="background-color: var(--accent-secondary);">문자 보내기
+            </button>
+            <button onclick="makeCall('01046166267')"
+                    class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기
+            </button>
           </div>
         </div>
       </div>
@@ -589,6 +687,80 @@
   </div>
 
   <!-- Custom JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const grid = document.getElementById('gallery-grid');
+      const loadMoreTile = document.getElementById('gallery-load-more-tile');
+      if (!grid || !loadMoreTile) return;
+
+      const allChildren = Array.from(grid.children);
+      const items = allChildren.filter((el) => el.id !== 'gallery-load-more-tile');
+
+      const INITIAL_VISIBLE = 9;
+      const CHUNK_SIZE = 6;
+      let visibleCount = Math.min(INITIAL_VISIBLE, items.length);
+
+      const update = () => {
+        items.forEach((el, idx) => {
+          if (idx < visibleCount) el.classList.remove('hidden');
+          else el.classList.add('hidden');
+        });
+
+        // 남은 사진이 있으면 + 타일 노출, 없으면 숨김
+        if (visibleCount < items.length) {
+          loadMoreTile.classList.remove('hidden');
+        } else {
+          loadMoreTile.classList.add('hidden');
+        }
+      };
+
+      // 초기 상태
+      update();
+
+      // + 클릭 시 6장씩 추가 노출
+      loadMoreTile.addEventListener('click', () => {
+        visibleCount = Math.min(items.length, visibleCount + CHUNK_SIZE);
+        update();
+      });
+
+      // 캘린더(.ics) 다운로드
+      const addCalendarBtn = document.getElementById('add-to-calendar-btn');
+      if (addCalendarBtn) {
+        addCalendarBtn.addEventListener('click', () => {
+          const icsContent = [
+            'BEGIN:VCALENDAR',
+            'VERSION:2.0',
+            'PRODID:-//wedding-mc//Add to Calendar//KO',
+            'CALSCALE:GREGORIAN',
+            'METHOD:PUBLISH',
+            'BEGIN:VEVENT',
+            `UID:wedding-20261031-${Date.now()}@hcsj.store`,
+            `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z')}`,
+            'SUMMARY:박한천 ♥ 정수진 결혼식',
+            'LOCATION:SW컨벤션센터 11층, 서울 종로구 지봉로 19',
+            'DESCRIPTION:박한천 ♥ 정수진 결혼식\\n2026년 10월 31일(토) 12:10\\nSW컨벤션센터 11층',
+            'DTSTART;TZID=Asia/Seoul:20261031T121000',
+            'DTEND;TZID=Asia/Seoul:20261031T141000',
+            'END:VEVENT',
+            'END:VCALENDAR',
+          ].join('\r\n');
+
+          const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'wedding.ics';
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+
+          setTimeout(() => URL.revokeObjectURL(url), 1000);
+        });
+      }
+    });
+
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
