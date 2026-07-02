@@ -81,8 +81,8 @@ function shareKakao() {
     objectType: 'feed',
     content: {
       title: '박한천 ♥ 정수진 결혼합니다',
-      description: '일시: 2026.10.31 (토) 12:10 PM\n장소: SW컨벤션센터 11층',
-      imageUrl: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&h=600&fit=crop',
+      description: '일시: 2026.10.31 (토) 12:10 PM\n장소: SW 컨벤션센터 11층',
+      imageUrl: 'https://mcard.hcsj.store/assets/images/gallery/3.png',
       link: {
         mobileWebUrl: window.location.href,
         webUrl: window.location.href
@@ -200,21 +200,107 @@ function makeCall(phone) {
   window.location.href = `tel:${phone}`;
 }
 
-// Image modal functionality
-function openImageModal(src) {
-  const modal = document.createElement('div');
-  modal.className = 'fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50';
-  modal.innerHTML = `
-    <button onclick="this.parentElement.remove()" class="absolute top-4 right-4 text-white text-4xl z-10">&times;</button>
-    <img src="${src}" class="max-w-full max-h-full object-contain px-4" />
-  `;
-  modal.onclick = function(e) {
-    if (e.target === modal || e.target.tagName === 'BUTTON') {
-      modal.remove();
-    }
-  };
-  document.body.appendChild(modal);
-}
+// Gallery lightbox with prev/next navigation
+(function () {
+  let images = [];
+  let currentIndex = 0;
+  let modalImg = null;
+  let modalEl = null;
+  let touchStartX = 0;
+
+  function getImages() {
+    const grid = document.getElementById('gallery-grid');
+    if (!grid) return [];
+    return Array.from(grid.querySelectorAll('img'));
+  }
+
+  function show(index) {
+    if (index < 0) index = images.length - 1;
+    if (index >= images.length) index = 0;
+    currentIndex = index;
+    modalImg.src = images[currentIndex].src;
+    modalImg.alt = images[currentIndex].alt || '';
+  }
+
+  function open(index) {
+    images = getImages();
+    if (!images.length) return;
+
+    modalEl = document.createElement('div');
+    modalEl.className = 'fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50 select-none';
+    modalEl.innerHTML = `
+      <button data-role="close" class="absolute top-4 right-4 text-white text-4xl leading-none z-10 w-10 h-10 flex items-center justify-center" aria-label="닫기">&times;</button>
+      <button data-role="prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-white text-4xl w-12 h-12 flex items-center justify-center z-10" aria-label="이전">&#8249;</button>
+      <button data-role="next" class="absolute right-2 top-1/2 -translate-y-1/2 text-white text-4xl w-12 h-12 flex items-center justify-center z-10" aria-label="다음">&#8250;</button>
+      <img data-role="img" class="max-w-full max-h-full object-contain px-4" />
+      <div data-role="counter" class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80 text-sm"></div>
+    `;
+
+    modalImg = modalEl.querySelector('[data-role="img"]');
+    const counter = modalEl.querySelector('[data-role="counter"]');
+
+    const update = (i) => {
+      show(i);
+      counter.textContent = `${currentIndex + 1} / ${images.length}`;
+    };
+
+    modalEl.addEventListener('click', (e) => {
+      const role = e.target.dataset && e.target.dataset.role;
+      if (role === 'close' || e.target === modalEl) {
+        close();
+      } else if (role === 'prev') {
+        update(currentIndex - 1);
+      } else if (role === 'next') {
+        update(currentIndex + 1);
+      }
+    });
+
+    modalEl.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].clientX;
+    }, { passive: true });
+
+    modalEl.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) < 40) return;
+      update(dx < 0 ? currentIndex + 1 : currentIndex - 1);
+    });
+
+    document.body.appendChild(modalEl);
+    document.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onKey);
+    update(index);
+  }
+
+  function close() {
+    if (!modalEl) return;
+    modalEl.remove();
+    modalEl = null;
+    modalImg = null;
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+  }
+
+  function onKey(e) {
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') show(currentIndex - 1);
+    else if (e.key === 'ArrowRight') show(currentIndex + 1);
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('gallery-grid');
+    if (!grid) return;
+    grid.addEventListener('click', (e) => {
+      const img = e.target.closest('img');
+      if (!img || !grid.contains(img)) return;
+      const list = getImages();
+      const idx = list.indexOf(img);
+      if (idx >= 0) open(idx);
+    });
+    grid.querySelectorAll('img').forEach((img) => {
+      img.classList.add('cursor-pointer');
+    });
+  });
+})();
 
 // Close modal on outside click
 document.getElementById('contact-modal').addEventListener('click', function(e) {
