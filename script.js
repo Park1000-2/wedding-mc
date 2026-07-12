@@ -82,7 +82,7 @@ function shareKakao() {
     content: {
       title: '박한천 ♥ 정수진 결혼합니다',
       description: '일시: 2026.10.31 (토) 12:10 PM\n장소: SW 컨벤션센터 11층',
-      imageUrl: 'https://mcard.hcsj.store/assets/images/gallery/kakao-link.png',
+      imageUrl: 'https://mcard.hcsj.store/assets/images/kakao-link.png',
       link: {
         mobileWebUrl: window.location.href,
         webUrl: window.location.href
