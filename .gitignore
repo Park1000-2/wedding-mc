@@ -1,0 +1,4 @@
+
+# 원본 이미지 백업 (배포/커밋 제외)
+assets/images_original/
+.DS_Store

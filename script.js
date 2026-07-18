@@ -147,6 +147,50 @@ function copyAddress() {
   alert('주소가 복사되었습니다.');
 }
 
+// Account accordion
+function toggleAccount(id) {
+  const panel = document.getElementById(id);
+  if (!panel) return;
+  const arrow = panel.previousElementSibling
+    ? panel.previousElementSibling.querySelector('.account-arrow')
+    : null;
+  const isOpen = panel.classList.toggle('open');
+  if (arrow) arrow.classList.toggle('open', isOpen);
+}
+
+function copyAccount(number, btn) {
+  const flash = () => {
+    if (!btn) return;
+    const original = btn.textContent;
+    btn.textContent = '복사됨';
+    setTimeout(() => { btn.textContent = original; }, 1500);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(number).then(flash).catch(() => {
+      fallbackCopyAccount(number);
+      flash();
+    });
+  } else {
+    fallbackCopyAccount(number);
+    flash();
+  }
+}
+
+function fallbackCopyAccount(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    document.execCommand('copy');
+  } catch (err) {
+    alert('복사에 실패했습니다. 수동으로 복사해주세요.');
+  }
+  document.body.removeChild(textarea);
+}
+
 // Map functions
 function openNaverMap() {
   window.open('https://naver.me/GzE9CXtD');

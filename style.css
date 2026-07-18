@@ -63,6 +63,26 @@ body {
   justify-content: center;
 }
 
+/* Account accordion styles */
+.account-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.account-panel.open {
+  max-height: 200px;
+}
+
+.account-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.account-arrow.open {
+  transform: rotate(180deg);
+}
+
 /* Tab styles */
 .tab-button {
   position: relative;
