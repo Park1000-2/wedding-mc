@@ -470,7 +470,7 @@
 
   <!-- Contact Modal -->
   <div id="contact-modal" class="modal">
-    <div class="bg-white rounded-2xl max-w-md w-full mx-4 p-6">
+    <div class="bg-white rounded-2xl max-w-md w-full mx-4 p-6 max-h-[90vh] overflow-y-auto">
       <!-- Header -->
       <div class="flex justify-between items-center mb-6">
         <div>
@@ -504,12 +504,12 @@
         <div class="bg-gray-50 rounded-xl p-5">
           <div class="flex justify-between items-center mb-3">
             <p class="text-base font-medium"><span class="text-sm text-gray-500 mr-4">신랑</span>박한천</p>
+            <button onclick="toggleAccount('acc-groom-1', this)" class="flex items-center gap-1 text-xs font-medium text-gray-500 py-1 px-2 rounded-md bg-gray-100">계좌번호 <span class="account-arrow">▾</span></button>
           </div>
           <div class="flex gap-2">
             <button onclick="sendSMS('01079005871')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
             <button onclick="makeCall('01079005871')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
-          <button onclick="toggleAccount('acc-groom-1')" class="w-full mt-2 py-2.5 rounded-lg text-sm font-medium text-gray-600 bg-gray-100 flex items-center justify-center gap-1">계좌번호 <span class="account-arrow">▾</span></button>
           <div id="acc-groom-1" class="account-panel">
             <div class="flex items-center justify-between mt-2 px-1">
               <div>
@@ -525,12 +525,12 @@
         <div class="bg-gray-50 rounded-xl p-5">
           <div class="flex justify-between items-center mb-3">
             <p class="text-base font-medium"><span class="text-sm text-gray-500 mr-4">신랑 아버지</span>박성준</p>
+            <button onclick="toggleAccount('acc-groom-2', this)" class="flex items-center gap-1 text-xs font-medium text-gray-500 py-1 px-2 rounded-md bg-gray-100">계좌번호 <span class="account-arrow">▾</span></button>
           </div>
           <div class="flex gap-2">
             <button onclick="sendSMS('01043796186')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
             <button onclick="makeCall('01043796186')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
-          <button onclick="toggleAccount('acc-groom-2')" class="w-full mt-2 py-2.5 rounded-lg text-sm font-medium text-gray-600 bg-gray-100 flex items-center justify-center gap-1">계좌번호 <span class="account-arrow">▾</span></button>
           <div id="acc-groom-2" class="account-panel">
             <div class="flex items-center justify-between mt-2 px-1">
               <div>
@@ -546,12 +546,12 @@
         <div class="bg-gray-50 rounded-xl p-5">
           <div class="flex justify-between items-center mb-3">
             <p class="text-base font-medium"><span class="text-sm text-gray-500 mr-4">신랑 어머니</span>김나윤</p>
+            <button onclick="toggleAccount('acc-groom-3', this)" class="flex items-center gap-1 text-xs font-medium text-gray-500 py-1 px-2 rounded-md bg-gray-100">계좌번호 <span class="account-arrow">▾</span></button>
           </div>
           <div class="flex gap-2">
             <button onclick="sendSMS('01020806186')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
             <button onclick="makeCall('01020806186')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
-          <button onclick="toggleAccount('acc-groom-3')" class="w-full mt-2 py-2.5 rounded-lg text-sm font-medium text-gray-600 bg-gray-100 flex items-center justify-center gap-1">계좌번호 <span class="account-arrow">▾</span></button>
           <div id="acc-groom-3" class="account-panel">
             <div class="flex items-center justify-between mt-2 px-1">
               <div>
@@ -570,12 +570,12 @@
         <div class="bg-gray-50 rounded-xl p-5">
           <div class="flex justify-between items-center mb-3">
             <p class="text-base font-medium"><span class="text-sm text-gray-500 mr-4">신부</span>정수진</p>
+            <button onclick="toggleAccount('acc-bride-1', this)" class="flex items-center gap-1 text-xs font-medium text-gray-500 py-1 px-2 rounded-md bg-gray-100">계좌번호 <span class="account-arrow">▾</span></button>
           </div>
           <div class="flex gap-2">
             <button onclick="sendSMS('01046166267')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
             <button onclick="makeCall('01046166267')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
-          <button onclick="toggleAccount('acc-bride-1')" class="w-full mt-2 py-2.5 rounded-lg text-sm font-medium text-gray-600 bg-gray-100 flex items-center justify-center gap-1">계좌번호 <span class="account-arrow">▾</span></button>
           <div id="acc-bride-1" class="account-panel">
             <div class="flex items-center justify-between mt-2 px-1">
               <div>
@@ -591,12 +591,12 @@
         <div class="bg-gray-50 rounded-xl p-5">
           <div class="flex justify-between items-center mb-3">
             <p class="text-base font-medium"><span class="text-sm text-gray-500 mr-4">신부 아버지</span>정상만</p>
+            <button onclick="toggleAccount('acc-bride-2', this)" class="flex items-center gap-1 text-xs font-medium text-gray-500 py-1 px-2 rounded-md bg-gray-100">계좌번호 <span class="account-arrow">▾</span></button>
           </div>
           <div class="flex gap-2">
             <button onclick="sendSMS('01097826267')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white" style="background-color: var(--accent-secondary);">문자 보내기</button>
             <button onclick="makeCall('01097826267')" class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기</button>
           </div>
-          <button onclick="toggleAccount('acc-bride-2')" class="w-full mt-2 py-2.5 rounded-lg text-sm font-medium text-gray-600 bg-gray-100 flex items-center justify-center gap-1">계좌번호 <span class="account-arrow">▾</span></button>
           <div id="acc-bride-2" class="account-panel">
             <div class="flex items-center justify-between mt-2 px-1">
               <div>
@@ -612,6 +612,7 @@
         <div class="bg-gray-50 rounded-xl p-5">
           <div class="flex justify-between items-center mb-3">
             <p class="text-base font-medium"><span class="text-sm text-gray-500 mr-4">신부 어머니</span>손정자</p>
+            <button onclick="toggleAccount('acc-bride-3', this)" class="flex items-center gap-1 text-xs font-medium text-gray-500 py-1 px-2 rounded-md bg-gray-100">계좌번호 <span class="account-arrow">▾</span></button>
           </div>
           <div class="flex gap-2">
             <button onclick="sendSMS('01094756267')" class="flex-1 py-3 rounded-lg text-sm font-medium text-white"
@@ -621,7 +622,6 @@
                     class="flex-1 py-3 bg-gray-700 rounded-lg text-sm font-medium text-white">전화하기
             </button>
           </div>
-          <button onclick="toggleAccount('acc-bride-3')" class="w-full mt-2 py-2.5 rounded-lg text-sm font-medium text-gray-600 bg-gray-100 flex items-center justify-center gap-1">계좌번호 <span class="account-arrow">▾</span></button>
           <div id="acc-bride-3" class="account-panel">
             <div class="flex items-center justify-between mt-2 px-1">
               <div>

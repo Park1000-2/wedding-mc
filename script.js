@@ -148,12 +148,10 @@ function copyAddress() {
 }
 
 // Account accordion
-function toggleAccount(id) {
+function toggleAccount(id, btn) {
   const panel = document.getElementById(id);
   if (!panel) return;
-  const arrow = panel.previousElementSibling
-    ? panel.previousElementSibling.querySelector('.account-arrow')
-    : null;
+  const arrow = btn ? btn.querySelector('.account-arrow') : null;
   const isOpen = panel.classList.toggle('open');
   if (arrow) arrow.classList.toggle('open', isOpen);
 }
